@@ -1,5 +1,3 @@
-# Copy this entire block and run in PowerShell
-$websiteCode = @'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +132,7 @@ $websiteCode = @'
             <p>Enterprise infrastructure monitoring that's simple, affordable, and built for businesses like yours</p>
             <div style="margin-top: 30px;">
                 <a href="#pricing" class="btn btn-primary">Get Started</a>
-                <a href="https://demo.continuum-monitor.com" class="btn btn-secondary">Live Demo</a>
+                <a href="#" class="btn btn-secondary">Live Demo</a>
             </div>
         </div>
         
@@ -232,17 +230,10 @@ $websiteCode = @'
         </div>
         
         <div class="footer">
-            <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | 📞 Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
+            <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
             <p><a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a></p>
             <p>© 2026 Continuum. All rights reserved.</p>
         </div>
     </div>
 </body>
 </html>
-'@
-
-# Save to Desktop for easy access
-$websiteCode | Out-File -FilePath "$env:USERPROFILE\Desktop\index.html" -Encoding UTF8
-
-Write-Host "Website file saved to your Desktop!" -ForegroundColor Green
-Write-Host "File: C:\Users\$env:USERNAME\Desktop\index.html" -ForegroundColor Cyan
