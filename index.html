@@ -104,7 +104,14 @@
         .comparison th { background: #0f1117; color: #60a5fa; }
         .comparison .yes { color: #4ade80; }
         .comparison .no { color: #f87171; }
+        .comparison .limited { color: #fbbf24; }
         .price-save { color: #4ade80; font-weight: bold; }
+        .disclaimer {
+            text-align: center;
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 20px;
+        }
         
         .pricing {
             padding: 60px 0;
@@ -165,7 +172,7 @@
             <div class="tech-badge">⚡ PowerShell-native architecture</div>
             <div style="margin-top: 30px;">
                 <a href="#pricing" class="btn btn-primary">Get Started</a>
-                <a href="https://swrz-ai.github.io/Continuum/Continuum_Final.ps1" class="btn btn-secondary">Download Script</a>
+                <a href="https://github.com/swrz-ai/Continuum/blob/main/Continuum_Final.ps1" class="btn btn-secondary">Download Script</a>
             </div>
         </div>
         
@@ -189,8 +196,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3>90% Cheaper</h3>
-                    <p>90% cheaper than traditional enterprise monitoring solutions like Datadog, New Relic, and PRTG</p>
+                    <h3>90% Lower Cost</h3>
+                    <p>Enterprise-grade monitoring at a fraction of traditional enterprise solution costs</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
@@ -206,27 +213,25 @@
         </div>
         
         <div class="comparison">
-            <h2>How We Compare</h2>
+            <h2>Industry Comparison</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Feature</th>
                         <th>Continuum</th>
-                        <th>Datadog</th>
-                        <th>New Relic</th>
-                        <th>PRTG</th>
+                        <th>Typical Enterprise Solutions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Windows Native</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td></tr>
-                    <tr><td>PowerShell-native</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
-                    <tr><td>Setup Time</td><td class="yes">10 min</td><td>Weeks</td><td>Weeks</td><td>Days</td></tr>
-                    <tr><td>Cost (50 nodes)</td><td class="price-save">$99/mo</td><td>$750+/mo</td><td>$450+/mo</td><td>$1,600+/yr</td></tr>
-                    <tr><td>Self-hosted</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td></tr>
-                    <tr><td>Multi-tenant</td><td class="yes">✅</td><td>Extra $</td><td>Extra $</td><td class="no">❌</td></tr>
+                    <tr><td>Windows Native</td><td class="yes">✅</td><td class="limited">⚠️ Limited</td></tr>
+                    <tr><td>PowerShell-native</td><td class="yes">✅</td><td class="no">❌</td></tr>
+                    <tr><td>Setup Time</td><td class="yes">10 minutes</td><td class="no">Days to weeks</td></tr>
+                    <tr><td>Cost (50 nodes)</td><td class="price-save">$99/month</td><td class="no">$500-1,500/month</td></tr>
+                    <tr><td>Self-hosted</td><td class="yes">✅</td><td class="limited">⚠️ Rare</td></tr>
+                    <tr><td>Multi-tenant</td><td class="yes">✅</td><td class="limited">⚠️ Extra cost</td></tr>
                 </tbody>
             </table>
-            <p style="text-align: center; margin-top: 20px; font-size: 13px;">Continuum is 90% cheaper than traditional enterprise monitoring solutions like Datadog, New Relic, and PRTG</p>
+            <p class="disclaimer">Continuum delivers enterprise monitoring at 90% lower cost. Based on publicly available pricing as of 2026.</p>
         </div>
         
         <div id="pricing" class="pricing">
