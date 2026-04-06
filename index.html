@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuum - Enterprise Infrastructure Monitoring</title>
+    <title>Continuum - Native Windows Monitoring</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -30,6 +30,14 @@
             color: #9ca3af;
             max-width: 600px;
             margin: 0 auto;
+        }
+        .tech-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #2d2f3e;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 20px;
         }
         
         .btn {
@@ -74,6 +82,29 @@
         }
         .feature-icon { font-size: 40px; margin-bottom: 20px; }
         .feature-card h3 { color: #60a5fa; margin-bottom: 15px; }
+        
+        .comparison {
+            padding: 60px 0;
+            background: #0f1117;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .comparison h2 { text-align: center; margin-bottom: 30px; }
+        .comparison table {
+            width: 100%;
+            background: #1a1e2a;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .comparison th, .comparison td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #2d2f3e;
+        }
+        .comparison th { background: #0f1117; color: #60a5fa; }
+        .comparison .yes { color: #4ade80; }
+        .comparison .no { color: #f87171; }
+        .price-save { color: #4ade80; font-weight: bold; }
         
         .pricing {
             padding: 60px 0;
@@ -122,6 +153,7 @@
         @media (max-width: 768px) {
             .header h1 { font-size: 32px; }
             .header p { font-size: 16px; }
+            .comparison table { font-size: 12px; }
         }
     </style>
 </head>
@@ -129,10 +161,11 @@
     <div class="container">
         <div class="header">
             <h1>Continuum</h1>
-            <p>Enterprise infrastructure monitoring that's simple, affordable, and built for businesses like yours</p>
+            <p>Native Windows monitoring. Built with PowerShell. Deploys in minutes.</p>
+            <div class="tech-badge">⚡ PowerShell-native architecture</div>
             <div style="margin-top: 30px;">
                 <a href="#pricing" class="btn btn-primary">Get Started</a>
-                <a href="#" class="btn btn-secondary">Live Demo</a>
+                <a href="https://swrz-ai.github.io/Continuum/Continuum_Final.ps1" class="btn btn-secondary">Download Script</a>
             </div>
         </div>
         
@@ -147,7 +180,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🔔</div>
                     <h3>Instant Alerts</h3>
-                    <p>Get notified immediately when servers go down. Never miss a critical issue.</p>
+                    <p>Get notified immediately when servers go down via Email, Telegram, Slack, or Teams</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🏢</div>
@@ -157,7 +190,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>90% Cheaper</h3>
-                    <p>Enterprise-grade monitoring at a fraction of the cost of Datadog or New Relic</p>
+                    <p>90% cheaper than traditional enterprise monitoring solutions like Datadog, New Relic, and PRTG</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
@@ -170,6 +203,30 @@
                     <p>API key authentication, rate limiting, and audit logs built in</p>
                 </div>
             </div>
+        </div>
+        
+        <div class="comparison">
+            <h2>How We Compare</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Continuum</th>
+                        <th>Datadog</th>
+                        <th>New Relic</th>
+                        <th>PRTG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Windows Native</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td></tr>
+                    <tr><td>PowerShell-native</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="no">❌</td></tr>
+                    <tr><td>Setup Time</td><td class="yes">10 min</td><td>Weeks</td><td>Weeks</td><td>Days</td></tr>
+                    <tr><td>Cost (50 nodes)</td><td class="price-save">$99/mo</td><td>$750+/mo</td><td>$450+/mo</td><td>$1,600+/yr</td></tr>
+                    <tr><td>Self-hosted</td><td class="yes">✅</td><td class="no">❌</td><td class="no">❌</td><td class="yes">✅</td></tr>
+                    <tr><td>Multi-tenant</td><td class="yes">✅</td><td>Extra $</td><td>Extra $</td><td class="no">❌</td></tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 20px; font-size: 13px;">Continuum is 90% cheaper than traditional enterprise monitoring solutions like Datadog, New Relic, and PRTG</p>
         </div>
         
         <div id="pricing" class="pricing">
@@ -230,7 +287,10 @@
         </div>
         
         <div class="footer">
-    <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
-    <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
-    <p>© 2026 Continuum. All rights reserved.</p>
-</div>
+            <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
+            <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+            <p>Native Windows monitoring built with PowerShell | © 2026 Continuum. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
