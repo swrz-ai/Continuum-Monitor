@@ -14,6 +14,7 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
+        /* Header Section */
         .header {
             padding: 80px 0 60px;
             text-align: center;
@@ -24,6 +25,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
         .header p {
             font-size: 20px;
@@ -33,13 +35,16 @@
         }
         .tech-badge {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 6px 14px;
             background: #2d2f3e;
-            border-radius: 20px;
+            border-radius: 30px;
             font-size: 12px;
+            font-weight: 500;
             margin-top: 20px;
+            letter-spacing: 0.3px;
         }
         
+        /* Button Styles - Enhanced */
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -47,20 +52,44 @@
             text-decoration: none;
             font-weight: 600;
             margin: 10px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
         .btn-primary {
             background: linear-gradient(135deg, #60a5fa, #c084fc);
             color: white;
+            box-shadow: 0 2px 8px rgba(96, 165, 250, 0.2);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
         }
         .btn-secondary {
             border: 1px solid #60a5fa;
             color: #60a5fa;
+            background: transparent;
         }
-        .btn:hover { transform: translateY(-2px); }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(96, 165, 250, 0.1);
+            box-shadow: 0 2px 8px rgba(96, 165, 250, 0.1);
+        }
         
+        /* Features Section */
         .features {
             padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #9ca3af;
+            margin-bottom: 40px;
         }
         .features-grid {
             display: grid;
@@ -74,38 +103,44 @@
             border-radius: 16px;
             padding: 30px;
             text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
         }
         .feature-card:hover {
             border-color: #60a5fa;
             transform: translateY(-4px);
-            transition: all 0.3s;
         }
         .feature-icon { font-size: 40px; margin-bottom: 20px; }
-        .feature-card h3 { color: #60a5fa; margin-bottom: 15px; }
+        .feature-card h3 { color: #60a5fa; margin-bottom: 15px; font-weight: 600; }
+        .feature-card p { color: #9ca3af; font-size: 14px; line-height: 1.5; }
         
+        /* Comparison Section */
         .comparison {
             padding: 60px 0;
             background: #0f1117;
-            border-radius: 20px;
+            border-radius: 24px;
             margin: 40px 0;
         }
-        .comparison h2 { text-align: center; margin-bottom: 30px; }
         .comparison table {
             width: 100%;
             background: #1a1e2a;
             border-radius: 16px;
             overflow: hidden;
+            border-collapse: collapse;
         }
         .comparison th, .comparison td {
-            padding: 12px;
+            padding: 14px 16px;
             text-align: left;
             border-bottom: 1px solid #2d2f3e;
         }
-        .comparison th { background: #0f1117; color: #60a5fa; }
-        .comparison .yes { color: #4ade80; }
+        .comparison th { 
+            background: #0f1117; 
+            color: #60a5fa; 
+            font-weight: 600;
+        }
+        .comparison .yes { color: #4ade80; font-weight: 500; }
         .comparison .no { color: #f87171; }
         .comparison .limited { color: #fbbf24; }
-        .price-save { color: #4ade80; font-weight: bold; }
+        .price-save { color: #4ade80; font-weight: 600; }
         .disclaimer {
             text-align: center;
             font-size: 11px;
@@ -113,6 +148,7 @@
             margin-top: 20px;
         }
         
+        /* Pricing Section */
         .pricing {
             padding: 60px 0;
         }
@@ -127,19 +163,25 @@
             border: 1px solid #2d2f3e;
             border-radius: 16px;
             overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: #60a5fa;
         }
         .pricing-header {
             background: #0f1117;
             padding: 30px;
             text-align: center;
         }
+        .pricing-header h3 { font-size: 24px; margin-bottom: 10px; }
         .price {
             font-size: 36px;
             font-weight: bold;
             color: #60a5fa;
             margin: 10px 0;
         }
-        .price span { font-size: 14px; color: #9ca3af; }
+        .price span { font-size: 14px; color: #9ca3af; font-weight: normal; }
         .pricing-body { padding: 30px; }
         .pricing-body ul { list-style: none; }
         .pricing-body li {
@@ -147,7 +189,13 @@
             border-bottom: 1px solid #2d2f3e;
         }
         .pricing-body li:last-child { border-bottom: none; }
+        .pricing-body .btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
         
+        /* Footer */
         .footer {
             text-align: center;
             padding: 40px 0;
@@ -155,17 +203,23 @@
             margin-top: 60px;
             color: #6b7280;
         }
-        .footer a { color: #60a5fa; text-decoration: none; }
+        .footer a { color: #60a5fa; text-decoration: none; transition: opacity 0.2s; }
+        .footer a:hover { opacity: 0.8; text-decoration: underline; }
+        .footer p { margin: 8px 0; }
         
+        /* Responsive */
         @media (max-width: 768px) {
             .header h1 { font-size: 32px; }
             .header p { font-size: 16px; }
             .comparison table { font-size: 12px; }
+            .comparison th, .comparison td { padding: 8px 10px; }
+            .section-title { font-size: 26px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header Section -->
         <div class="header">
             <h1>Continuum</h1>
             <p>Native Windows monitoring. Built with PowerShell. Deploys in minutes.</p>
@@ -176,8 +230,10 @@
             </div>
         </div>
         
+        <!-- Features Section -->
         <div class="features">
-            <h2 style="text-align: center;">Why Choose Continuum?</h2>
+            <h2 class="section-title">Why Choose Continuum?</h2>
+            <p class="section-subtitle">Enterprise monitoring made simple, affordable, and powerful</p>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
@@ -212,8 +268,10 @@
             </div>
         </div>
         
+        <!-- Comparison Section -->
         <div class="comparison">
-            <h2>Industry Comparison</h2>
+            <h2 class="section-title">Industry Comparison</h2>
+            <p class="section-subtitle">How Continuum stacks up against traditional solutions</p>
             <table>
                 <thead>
                     <tr>
@@ -223,25 +281,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Windows Native</td><td class="yes">✅</td><td class="limited">⚠️ Limited</td></tr>
-                    <tr><td>PowerShell-native</td><td class="yes">✅</td><td class="no">❌</td></tr>
-                    <tr><td>Setup Time</td><td class="yes">10 minutes</td><td class="no">Days to weeks</td></tr>
-                    <tr><td>Cost (50 nodes)</td><td class="price-save">$99/month</td><td class="no">$500-1,500/month</td></tr>
-                    <tr><td>Self-hosted</td><td class="yes">✅</td><td class="limited">⚠️ Rare</td></tr>
-                    <tr><td>Multi-tenant</td><td class="yes">✅</td><td class="limited">⚠️ Extra cost</td></tr>
+                    <tr><td style="font-weight: 500;">Windows Native</td><td class="yes">✅</td><td class="limited">⚠️ Limited</td></tr>
+                    <tr><td style="font-weight: 500;">PowerShell-native</td><td class="yes">✅</td><td class="no">❌</td></tr>
+                    <tr><td style="font-weight: 500;">Setup Time</td><td class="yes">10 minutes</td><td class="no">Days to weeks</td></tr>
+                    <tr><td style="font-weight: 500;">Cost (50 nodes)</td><td class="price-save">$99/month</td><td class="no">$500-1,500/month</td></tr>
+                    <tr><td style="font-weight: 500;">Self-hosted</td><td class="yes">✅</td><td class="limited">⚠️ Rare</td></tr>
+                    <tr><td style="font-weight: 500;">Multi-tenant</td><td class="yes">✅</td><td class="limited">⚠️ Extra cost</td></tr>
                 </tbody>
             </table>
             <p class="disclaimer">Continuum delivers enterprise monitoring at 90% lower cost. Based on publicly available pricing as of 2026.</p>
         </div>
         
+        <!-- Pricing Section -->
         <div id="pricing" class="pricing">
-            <h2 style="text-align: center;">Simple, Transparent Pricing</h2>
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Choose the plan that fits your needs</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Starter</h3>
                         <div class="price">$49<span>/month</span></div>
-                        <p>Perfect for small teams</p>
+                        <p style="color: #9ca3af; font-size: 14px;">Perfect for small teams</p>
                     </div>
                     <div class="pricing-body">
                         <ul>
@@ -251,14 +311,14 @@
                             <li>✓ 7-day history</li>
                             <li>✓ Email support</li>
                         </ul>
-                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary" style="display: block; text-align: center;">Choose Plan</a>
+                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Choose Plan</a>
                     </div>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Professional</h3>
                         <div class="price">$99<span>/month</span></div>
-                        <p>Most popular</p>
+                        <p style="color: #9ca3af; font-size: 14px;">Most popular</p>
                     </div>
                     <div class="pricing-body">
                         <ul>
@@ -268,14 +328,14 @@
                             <li>✓ 30-day history</li>
                             <li>✓ Priority support</li>
                         </ul>
-                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary" style="display: block; text-align: center;">Choose Plan</a>
+                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Choose Plan</a>
                     </div>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Enterprise</h3>
                         <div class="price">Custom</div>
-                        <p>For large organizations</p>
+                        <p style="color: #9ca3af; font-size: 14px;">For large organizations</p>
                     </div>
                     <div class="pricing-body">
                         <ul>
@@ -285,12 +345,13 @@
                             <li>✓ Custom integrations</li>
                             <li>✓ 99.9% SLA</li>
                         </ul>
-                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary" style="display: block; text-align: center;">Contact Us</a>
+                        <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
         
+        <!-- Footer -->
         <div class="footer">
             <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
             <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
