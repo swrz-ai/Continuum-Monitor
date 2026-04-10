@@ -15,13 +15,13 @@ PowerShell-native infrastructure monitoring system. Real-time dashboard, multi-t
 - ✅ **Multi-type monitoring** - Ping, HTTP, HTTPS, Port, Service
 - ✅ **Multi-tenant support** - Monitor multiple clients from one dashboard
 - ✅ **Instant alerts** - Email notifications on status change
+
+### Data Protection
 - ✅ **Auto-backup** - Hourly backups of Continuum configuration (30-day retention)
 - ✅ **1-Year Data Retention** - Archive server status history for compliance and trend analysis (365-day retention)
 
-### Data & Reports
+### Reports & Export
 - ✅ **CSV/JSON/HTML export** - One-click report generation
-- ✅ **1-year data retention** - Automatic monthly archiving
-- ✅ **Auto-backup** - Hourly backups, 30-day retention
 - ✅ **Scheduled daily reports** - Automatic email reports
 
 ### Advanced Features
