@@ -8,7 +8,7 @@
 
 Native Windows monitoring. Deploys in minutes. **90% lower cost** than traditional enterprise solutions.
 
-⚡ **PowerShell-native architecture** | 📊 **Historical Graphs** | 🔔 **Multi-channel Alerts** | 🗄️ **365-Day Retention**
+⚡ **PowerShell-native architecture** | 📊 **Historical Graphs** | 📞 **Direct Support** | 🗄️ **365-Day Retention**
 
 ---
 
@@ -23,15 +23,6 @@ Native Windows monitoring. Deploys in minutes. **90% lower cost** than tradition
 | **Uptime Percentage** | Per-node uptime tracking with color coding (Green/Yellow/Red) |
 | **Response Time** | Ping latency in milliseconds with speed indicators |
 | **Historical Graphs** | 12-hour response time and uptime trends using Chart.js |
-
-### 🔔 Alerting
-
-| Feature | Description |
-|---------|-------------|
-| **Console Alerts** | Real-time status changes in PowerShell window |
-| **Email Alerts** | SMTP notifications on status changes (configurable) |
-| **Slack Webhooks** | Send alerts to Slack channels |
-| **Discord Webhooks** | Send alerts to Discord servers |
 
 ### 🗄️ Data Protection
 
@@ -57,6 +48,14 @@ Native Windows monitoring. Deploys in minutes. **90% lower cost** than tradition
 | **Desktop Shortcut** | One-click launch from desktop |
 | **Scheduled Task** | Auto-start on Windows boot |
 | **10-Minute Setup** | Single PowerShell script |
+
+### 📞 Support & Contact
+
+| Feature | Description |
+|---------|-------------|
+| **Email Support** | Contact us at hello@continuum-monitor.com |
+| **LinkedIn** | Professional messaging via LinkedIn |
+| **GitHub Issues** | Technical support and bug reports |
 
 ---
 
