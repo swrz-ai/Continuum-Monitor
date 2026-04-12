@@ -1,50 +1,65 @@
-# Continuum - Enterprise Infrastructure Monitoring
+---
 
-PowerShell-native infrastructure monitoring system. Real-time dashboard, multi-tenant, 90% cheaper than traditional enterprise solutions.
+## ✨ Features
 
-![Version](https://img.shields.io/badge/version-4.0-blue)
-![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
+### 📊 Core Monitoring
+| Feature | Description |
+|---------|-------------|
+| **Real-time dashboard** | Auto-refreshes every 5 seconds |
+| **Multi-tenant support** | Monitor multiple clients from one dashboard |
+| **Uptime Percentage** | Per-node uptime tracking with color coding (Green/Yellow/Red) |
+| **Response Time** | Ping latency in milliseconds with speed indicators |
+| **Historical Graphs** | 12-hour response time and uptime trends using Chart.js |
+
+### 🔔 Alerting
+| Feature | Description |
+|---------|-------------|
+| **Console Alerts** | Real-time status changes in PowerShell window |
+| **Email Alerts** | SMTP notifications on status changes (configurable) |
+| **Slack Webhooks** | Send alerts to Slack channels |
+| **Discord Webhooks** | Send alerts to Discord servers |
+
+### 🗄️ Data Protection
+| Feature | Description |
+|---------|-------------|
+| **365-Day Retention** | Automatic daily archiving with auto-delete after 1 year |
+| **Archive Viewer** | Browse and view historical archives via web UI |
+| **Audit Logging** | Track all dashboard access and failed attempts |
+
+### 🔒 Security
+| Feature | Description |
+|---------|-------------|
+| **SHA-256 Hashing** | API keys stored as hashes, not plain text |
+| **Rate Limiting** | 60 requests per minute per IP |
+| **Audit Trail** | Complete log of all access attempts |
+
+### 📱 Access & Deployment
+| Feature | Description |
+|---------|-------------|
+| **Mobile Responsive** | Works on phones, tablets, and desktops |
+| **Desktop Shortcut** | One-click launch from desktop |
+| **Scheduled Task** | Auto-start on Windows boot |
+| **10-Minute Setup** | Single PowerShell script |
 
 ---
 
-## Features
-
-### Core Monitoring
-- ✅ **Real-time dashboard** - 5-second auto-refresh
-- ✅ **Multi-type monitoring** - Ping, HTTP, HTTPS, Port, Service
-- ✅ **Multi-tenant support** - Monitor multiple clients from one dashboard
-- ✅ **Instant alerts** - Email notifications on status change
-
-### Data Protection
-- ✅ **Auto-backup** - Hourly backups of Continuum configuration (30-day retention)
-- ✅ **1-Year Data Retention** - Archive server status history for compliance and trend analysis (365-day retention)
-
-### Reports & Export
-- ✅ **CSV/JSON/HTML export** - One-click report generation
-- ✅ **Scheduled daily reports** - Automatic email reports
-
-### Advanced Features
-- ✅ **Mobile responsive dashboard** - Works on phones and tablets
-- ✅ **Enhanced health check** - Detailed system status endpoint
-- ✅ **Maintenance windows** - Schedule downtime without alerts
-- ✅ **Multi-channel alerts** - Email, Telegram, Slack, Teams, Discord
-
----
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Requirements
 - Windows 10/11 or Windows Server 2016+
 - PowerShell 5.1+ (built-in)
+- Administrator access (recommended)
 - No additional dependencies
 
 ### Installation
 
 ```powershell
-# Clone the repository
-git clone https://github.com/swrz-ai/Continuum.git
-cd Continuum
+# Download the script
+# Save as Continuum.ps1
 
 # Run Continuum
-.\Continuum_Final.ps1
+powershell -ExecutionPolicy Bypass -File Continuum.ps1
+
+# Access dashboard
+# Open browser to: http://localhost:18500/dashboard?tenant=Demo&key=demo-123
+
