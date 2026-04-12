@@ -1,8 +1,21 @@
+# Continuum - Enterprise Infrastructure Monitoring
+
+**PowerShell-native infrastructure monitoring system** | *v4.0*
+
+[![Version](https://img.shields.io/badge/version-4.0-blue.svg)](https://github.com/swrz-ai/Continuum)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green.svg)](https://github.com/swrz-ai/Continuum)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/swrz-ai/Continuum)
+
+Native Windows monitoring. Deploys in minutes. **90% lower cost** than traditional enterprise solutions.
+
+⚡ **PowerShell-native architecture** | 📊 **Historical Graphs** | 🔔 **Multi-channel Alerts** | 🗄️ **365-Day Retention**
+
 ---
 
 ## ✨ Features
 
 ### 📊 Core Monitoring
+
 | Feature | Description |
 |---------|-------------|
 | **Real-time dashboard** | Auto-refreshes every 5 seconds |
@@ -12,6 +25,7 @@
 | **Historical Graphs** | 12-hour response time and uptime trends using Chart.js |
 
 ### 🔔 Alerting
+
 | Feature | Description |
 |---------|-------------|
 | **Console Alerts** | Real-time status changes in PowerShell window |
@@ -20,6 +34,7 @@
 | **Discord Webhooks** | Send alerts to Discord servers |
 
 ### 🗄️ Data Protection
+
 | Feature | Description |
 |---------|-------------|
 | **365-Day Retention** | Automatic daily archiving with auto-delete after 1 year |
@@ -27,6 +42,7 @@
 | **Audit Logging** | Track all dashboard access and failed attempts |
 
 ### 🔒 Security
+
 | Feature | Description |
 |---------|-------------|
 | **SHA-256 Hashing** | API keys stored as hashes, not plain text |
@@ -34,6 +50,7 @@
 | **Audit Trail** | Complete log of all access attempts |
 
 ### 📱 Access & Deployment
+
 | Feature | Description |
 |---------|-------------|
 | **Mobile Responsive** | Works on phones, tablets, and desktops |
@@ -46,6 +63,7 @@
 ## 🚀 Quick Start
 
 ### Requirements
+
 - Windows 10/11 or Windows Server 2016+
 - PowerShell 5.1+ (built-in)
 - Administrator access (recommended)
@@ -62,4 +80,3 @@ powershell -ExecutionPolicy Bypass -File Continuum.ps1
 
 # Access dashboard
 # Open browser to: http://localhost:18500/dashboard?tenant=Demo&key=demo-123
-
