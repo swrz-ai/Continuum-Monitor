@@ -1,6 +1,6 @@
-# Continuum - Enterprise Infrastructure Monitoring
+# Continuum Monitor
 
-**PowerShell-native infrastructure monitoring system** | *v4.0*
+**Enterprise Infrastructure Monitoring** | *v4.0*
 
 [![Version](https://img.shields.io/badge/version-4.0-blue.svg)](https://github.com/swrz-ai/Continuum)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green.svg)](https://github.com/swrz-ai/Continuum)
@@ -71,10 +71,10 @@ Native Windows monitoring. Deploys in minutes. **90% lower cost** than tradition
 ### Installation
 
 ```powershell
-# Download the script
+# Download Continuum Monitor
 # Save as Continuum.ps1
 
-# Run Continuum
+# Run Continuum Monitor
 powershell -ExecutionPolicy Bypass -File Continuum.ps1
 
 # Access dashboard
