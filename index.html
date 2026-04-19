@@ -1,10 +1,15 @@
 
+---
+
+### 🌐 GitHub Pages HTML (index.html)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuum Monitor - Native Windows Monitoring</title>
+    <title>Continuum Monitor - Cross-Platform Infrastructure Monitoring</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,6 +30,13 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
+        }
+        .header h1 span {
+            font-size: 18px;
+            display: block;
+            color: #9ca3af;
+            -webkit-text-fill-color: #9ca3af;
+            margin-top: 8px;
         }
         .header p {
             font-size: 20px;
@@ -98,6 +110,30 @@
         }
         .feature-icon { font-size: 40px; margin-bottom: 20px; }
         .feature-card h3 { color: #60a5fa; margin-bottom: 15px; }
+        .feature-card p { font-size: 14px; color: #9ca3af; }
+        
+        .graph-demo {
+            background: #1a1e2a;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .graph-demo h3 { color: #60a5fa; margin-bottom: 15px; }
+        .graph-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .control-badge {
+            background: #2d2f3e;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: #c084fc;
+        }
         
         .pricing {
             padding: 60px 0;
@@ -153,22 +189,33 @@
         }
         .footer a { color: #60a5fa; text-decoration: none; }
         
+        .badge {
+            background: #7c3aed20;
+            color: #c084fc;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        
         @media (max-width: 768px) {
             .header h1 { font-size: 32px; }
             .header p { font-size: 16px; }
             .pricing-grid { grid-template-columns: 1fr; }
+            .graph-controls { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Continuum Monitor</h1>
-            <p>Native Windows monitoring. Deploys in minutes.</p>
-            <div class="tech-badge">⚡ PowerShell-native architecture</div>
+            <h1>Continuum Monitor <span>Cross-Platform Infrastructure Monitoring</span></h1>
+            <p>Monitor Windows, Linux, macOS, ports, websites, and SSL certificates.</p>
+            <div class="tech-badge">⚡ PowerShell-native | 🐧 Cross-Platform | 📊 Interactive Graphs</div>
             <div style="margin-top: 30px;">
                 <a href="#pricing" class="btn btn-primary">Get Started</a>
-                <a href="https://github.com/swrz-ai/Continuum" class="btn btn-secondary">Download Script</a>
+                <a href="https://github.com/swrz-ai/Continuum" class="btn btn-secondary">Download v5.0</a>
             </div>
         </div>
         
@@ -177,61 +224,87 @@
             <p class="section-subtitle">Enterprise monitoring made simple, affordable, and powerful</p>
             <div class="features-grid">
                 <div class="feature-card">
+                    <div class="feature-icon">🐧</div>
+                    <h3>Linux Monitoring</h3>
+                    <p>Monitor Linux servers via ping, port checks, and HTTP/HTTPS</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Port Monitoring</h3>
+                    <p>Check SSH (22), MySQL (3306), any TCP port</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>HTTP/HTTPS</h3>
+                    <p>Monitor websites, APIs, and web services response times</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>SSL Certificates</h3>
+                    <p>Track certificate expiry with color-coded warnings</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>Real-time Dashboard</h3>
-                    <p>Beautiful, auto-refreshing dashboard showing your entire infrastructure at a glance</p>
+                    <h3>Interactive Graphs</h3>
+                    <p>Zoom, pan, and double-click to reset 12-hour trends</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📈</div>
                     <h3>Uptime Percentage</h3>
-                    <p>Per-node uptime tracking with color-coded indicators (Green/Yellow/Red)</p>
+                    <p>Per-node uptime tracking with color coding</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⏱️</div>
                     <h3>Response Time</h3>
-                    <p>Monitor ping latency in milliseconds with speed indicators</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📉</div>
-                    <h3>Historical Graphs</h3>
-                    <p>12-hour response time and uptime trends using Chart.js</p>
+                    <p>Ping latency in milliseconds with speed indicators</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🏢</div>
                     <h3>Multi-tenant</h3>
-                    <p>Monitor multiple clients or environments from one system with isolated dashboards</p>
+                    <p>Monitor multiple clients from one dashboard</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Slack & Discord</h3>
+                    <p>Real-time alerts to your team channels</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>90% Lower Cost</h3>
-                    <p>Enterprise-grade monitoring at a fraction of traditional enterprise solution costs (vs Datadog, Dynatrace, etc.)</p>
+                    <p>Enterprise-grade monitoring at a fraction of traditional costs</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>10-Minute Setup</h3>
-                    <p>Get monitoring up and running in minutes, not weeks</p>
+                    <p>Single PowerShell script, deploys in minutes</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
                     <h3>Secure by Default</h3>
-                    <p>SHA-256 API key authentication, rate limiting, and audit logs built in</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Responsive</h3>
-                    <p>Monitor your infrastructure from any device - phone, tablet, or desktop</p>
+                    <p>SHA-256 API keys, rate limiting, audit logs</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🗄️</div>
                     <h3>365-Day Retention</h3>
-                    <p>Automatic archiving keeps your monitoring history for a full year</p>
+                    <p>Automatic archiving with auto-delete after 1 year</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📞</div>
-                    <h3>Direct Support</h3>
-                    <p>Reach us via Email, LinkedIn, or Discord for assistance</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Responsive</h3>
+                    <p>Monitor from any device - phone, tablet, or desktop</p>
                 </div>
             </div>
+        </div>
+        
+        <div class="graph-demo">
+            <h3>📊 Interactive Graph Controls</h3>
+            <div class="graph-controls">
+                <span class="control-badge">🖱️ Scroll to zoom</span>
+                <span class="control-badge">👆 Drag to pan</span>
+                <span class="control-badge">🔁 Double-click to reset</span>
+                <span class="control-badge">🔍 Hover for exact values</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 14px; color: #9ca3af;">12-hour response time and uptime trends with full interactivity</p>
         </div>
         
         <div id="pricing" class="pricing">
@@ -249,7 +322,7 @@
                             <li>✓ Up to 20 nodes</li>
                             <li>✓ 1 tenant</li>
                             <li>✓ Real-time dashboard</li>
-                            <li>✓ Uptime & Response Time</li>
+                            <li>✓ Interactive graphs</li>
                             <li>✓ Community support (GitHub)</li>
                         </ul>
                         <a href="https://github.com/swrz-ai/Continuum" class="btn btn-primary">Download Free</a>
@@ -283,7 +356,9 @@
                             <li>✓ Up to 10 tenants</li>
                             <li>✓ Priority support</li>
                             <li>✓ 30-day history</li>
-                            <li>✓ Historical Graphs</li>
+                            <li>✓ Slack & Discord Alerts</li>
+                            <li>✓ Interactive Graphs</li>
+                            <li>✓ Port & SSL Monitoring</li>
                         </ul>
                         <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Choose Plan</a>
                     </div>
@@ -306,19 +381,13 @@
                     </div>
                 </div>
             </div>
+            <p style="text-align: center; margin-top: 20px;">🎁 <strong>First month of Professional plan FREE</strong></p>
         </div>
         
         <div class="footer">
             <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
-            <p>
-                <a href="https://sites.google.com/view/continuum-portal/home">Client Portal</a> | 
-                <a href="https://github.com/swrz-ai/Continuum">GitHub</a> | 
-                <a href="https://www.linkedin.com/in/waseem-raza-b99752400/">LinkedIn</a> | 
-                <a href="https://discord.gg/YOUR_INVITE_CODE">Discord</a> | 
-                <a href="terms.html">Terms</a> | 
-                <a href="privacy.html">Privacy</a>
-            </p>
-            <p>Enterprise infrastructure monitoring | © 2026 Continuum Monitor. All rights reserved. | v4.0</p>
+            <p><a href="https://sites.google.com/view/continuum-portal/home">Client Portal</a> | <a href="https://github.com/swrz-ai/Continuum">GitHub</a> | <a href="https://www.linkedin.com/in/waseem-raza-b99752400/">LinkedIn</a> | <a href="https://discord.gg/YOUR_INVITE_CODE">Discord</a> | <a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+            <p>Cross-platform infrastructure monitoring with interactive graphs | © 2026 Continuum Monitor. All rights reserved. | v5.0</p>
         </div>
     </div>
 </body>
