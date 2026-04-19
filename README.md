@@ -1,83 +1,63 @@
-# Continuum-Monitor
+# Continuum Monitor
 
-**Enterprise Infrastructure Monitoring** | *v4.0*
+**Cross-Platform Infrastructure Monitoring** | *v5.0*
 
-[![Version](https://img.shields.io/badge/version-4.0-blue.svg)](https://github.com/swrz-ai/Continuum)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green.svg)](https://github.com/swrz-ai/Continuum)
-[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/swrz-ai/Continuum)
+[![Version](https://img.shields.io/badge/version-5.0-blue.svg)](https://github.com/swrz-ai/Continuum-Monitor)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-green.svg)](https://github.com/swrz-ai/Continuum-Monitor)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/swrz-ai/Continuum-Monitor)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue.svg)](https://github.com/swrz-ai/Continuum-Monitor)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2.svg)](https://discord.gg/YOUR_INVITE_CODE)
 
-Native Windows monitoring. Deploys in minutes. **90% lower cost** than traditional enterprise solutions.
+Monitor anything, anywhere. Deploys in minutes. **90% lower cost** than traditional enterprise solutions.
 
-⚡ **PowerShell-native architecture** | 📊 **Historical Graphs** | 📞 **Direct Support** | 🗄️ **365-Day Retention**
+⚡ **PowerShell-native** | 🐧 **Cross-Platform** | 📊 **Interactive Graphs** | 💬 **Slack & Discord** | 🤖 **AI-Ready**
+
+---
+
+## 🤖 AI-Ready Infrastructure Monitoring
+
+Continuum Monitor is built for the AI era:
+
+- ✅ **Node-based pricing** — No per-seat costs, insulated from AI-driven headcount changes
+- ✅ **System of Record** — Immutable audit logs and 365-day retention for AI training data
+- ✅ **API-first ready** — Easy integration with AI agents and automation workflows
+- ✅ **Self-hosted** — Your monitoring data stays on your infrastructure for AI processing
+- ✅ **90% lower cost** — Compared to traditional enterprise solutions
+
+> *"Continuum Monitor monitors the infrastructure that powers your AI."*
 
 ---
 
 ## ✨ Features
 
-### 📊 Core Monitoring
+| Category | Features |
+|----------|----------|
+| **Monitoring** | Windows, Linux, macOS, Ports (SSH, MySQL), HTTP/HTTPS, SSL Certificates |
+| **Analytics** | Uptime %, Response Time (ms), Interactive Graphs (Chart.js) |
+| **Graph Controls** | 🖱️ Scroll to zoom | Drag to pan | Double-click to reset |
+| **Data** | 365-day retention, Archive viewer, Audit logging |
+| **Alerts** | Console, Slack, Discord (webhooks) |
+| **Security** | SHA-256 hashing, Rate limiting (60/min), Audit trail |
+| **Deployment** | Desktop shortcut, Scheduled task, Port 18503 |
 
-| Feature | Description |
-|---------|-------------|
-| **Real-time dashboard** | Auto-refreshes every 5 seconds |
-| **Multi-tenant support** | Monitor multiple clients from one dashboard |
-| **Uptime Percentage** | Per-node uptime tracking with color coding (Green/Yellow/Red) |
-| **Response Time** | Ping latency in milliseconds with speed indicators |
-| **Historical Graphs** | 12-hour response time and uptime trends using Chart.js |
+---
 
-### 🗄️ Data Protection
+## 🖱️ Interactive Graph Controls
 
-| Feature | Description |
-|---------|-------------|
-| **365-Day Retention** | Automatic daily archiving with auto-delete after 1 year |
-| **Archive Viewer** | Browse and view historical archives via web UI |
-| **Audit Logging** | Track all dashboard access and failed attempts |
-
-### 🔒 Security
-
-| Feature | Description |
-|---------|-------------|
-| **SHA-256 Hashing** | API keys stored as hashes, not plain text |
-| **Rate Limiting** | 60 requests per minute per IP |
-| **Audit Trail** | Complete log of all access attempts |
-
-### 📱 Access & Deployment
-
-| Feature | Description |
-|---------|-------------|
-| **Mobile Responsive** | Works on phones, tablets, and desktops |
-| **Desktop Shortcut** | One-click launch from desktop |
-| **Scheduled Task** | Auto-start on Windows boot |
-| **10-Minute Setup** | Single PowerShell script |
-
-### 📞 Support & Contact
-
-| Channel | Contact |
-|---------|---------|
-| **Email** | hello@continuum-monitor.com |
-| **LinkedIn** | [Waseem Raza](https://www.linkedin.com/in/waseem-raza-b99752400/) |
-| **Discord** | [Join our Discord Server](https://discord.gg/YOUR_INVITE_CODE) |
-| **GitHub Issues** | [Technical support](https://github.com/swrz-ai/Continuum/issues) |
+| Action | Result |
+|--------|--------|
+| **Mouse wheel** | Zoom in/out on time range |
+| **Click and drag** | Pan left/right |
+| **Double-click** | Reset to full 12-hour view |
+| **Hover** | See exact values |
 
 ---
 
 ## 🚀 Quick Start
 
-### Requirements
-
-- Windows 10/11 or Windows Server 2016+
-- PowerShell 5.1+ (built-in)
-- Administrator access (recommended)
-- No additional dependencies
-
-### Installation
-
 ```powershell
-# Download Continuum Monitor
-# Save as Continuum.ps1
-
-# Run Continuum Monitor
-powershell -ExecutionPolicy Bypass -File Continuum.ps1
+# Download and run
+powershell -ExecutionPolicy Bypass -File Continuum_Monitor_v5.0.ps1
 
 # Access dashboard
-# Open browser to: http://localhost:18500/dashboard?tenant=Demo&key=demo-123
+http://localhost:18503/dashboard?tenant=Demo&key=demo-123
