@@ -6,6 +6,7 @@
 ![License](https://img.shields.io/badge/license-MIT-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 ![Discord](https://img.shields.io/badge/discord-join-7289da)
+[![Website](https://img.shields.io/badge/Website-Continuum_Monitor-blue?logo=githubpages)](https://swrz-ai.github.io/Continuum-Monitor/)
 
 **Monitor anything, anywhere. Deploys in minutes. Up to 95% lower cost than traditional enterprise solutions.**
 
