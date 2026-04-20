@@ -48,6 +48,24 @@ Continuum Monitor is built differently:
 | **Interactive Graphs** | Chart.js with zoom, pan, and double-click reset |
 | **Data Retention** | 365-day automatic archiving with auto-delete |
 
+### 🖱️ Interactive Graph Controls
+| Action | Result |
+|--------|--------|
+| 🖱️ **Mouse wheel** | Zoom in/out on time range |
+| 👆 **Click and drag** | Pan left/right across timeline |
+| 🔁 **Double-click** | Reset to full 12-hour view |
+| 🔍 **Hover** | See exact values at any point |
+
+### 🔔 Alerts & Notifications
+| Channel | Support |
+|---------|---------|
+| **Console** | Real-time status changes |
+| **Slack** | Webhook integration |
+| **Discord** | Webhook integration |
+| **Email** | Coming in v5.1 |
+
+---
+
 ## 🔒 Security Features
 
 | Feature | Description | Status |
@@ -69,51 +87,3 @@ Recommended Security Setup:
   ├── Deploy behind firewall or cloud VPC
   ├── Regular audit log reviews
   └── Rotate API keys every 30 days (configurable)
-
-### 🖱️ Interactive Graph Controls
-| Action | Result |
-|--------|--------|
-| 🖱️ **Mouse wheel** | Zoom in/out on time range |
-| 👆 **Click and drag** | Pan left/right across timeline |
-| 🔁 **Double-click** | Reset to full 12-hour view |
-| 🔍 **Hover** | See exact values at any point |
-
-### 🔔 Alerts & Notifications
-| Channel | Support |
-|---------|---------|
-| **Console** | Real-time status changes |
-| **Slack** | Webhook integration |
-| **Discord** | Webhook integration |
-| **Email** | Coming in v5.1 |
-
-### 🔒 Security & Compliance
-| Feature | Implementation |
-|---------|----------------|
-| **API Keys** | SHA-256 hashing |
-| **Rate Limiting** | 60 requests per minute per IP |
-| **Audit Trail** | Complete access logs |
-| **Data Privacy** | Self-hosted, no external data collection |
-
----
-
-## 🚀 Quick Start
-
-### System Requirements
-- Windows 10/11 or Windows Server 2016+ (Linux/macOS via PowerShell Core)
-- PowerShell 5.1+ (built into Windows)
-- Administrator access (recommended for port monitoring)
-- **No additional dependencies** - Everything included
-
-### One-Line Installation
-
-```powershell
-# Download and run
-powershell -ExecutionPolicy Bypass -File Continuum_Monitor_v5.0.ps1
-
-# Access dashboard (replace locahost with your server's IP for remote access)
-http://localhost:18503/dashboard?tenant=Demo&key=demo-123
-**Quick Links:** [GitHub](https://github.com/swrz-ai/Continuum-Monitor) | [Website](https://swrz-ai.github.io/Continuum-Monitor/) | [Security](#security) | [Terms](#) | [Privacy](#)
-
-**Security Status:** 🔒 IP Whitelisting Ready | 🔐 HTTPS Ready | 📊 Rate Limiting Active | 📝 Audit Logging
-
-© 2026 Continuum Monitor. All rights reserved. | v5.0 | Enterprise-Grade Security Included
