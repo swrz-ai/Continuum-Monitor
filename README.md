@@ -48,6 +48,28 @@ Continuum Monitor is built differently:
 | **Interactive Graphs** | Chart.js with zoom, pan, and double-click reset |
 | **Data Retention** | 365-day automatic archiving with auto-delete |
 
+## 🔒 Security Features
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **IP Whitelisting** | Restrict access to specific IP addresses/ranges | ✅ Optional |
+| **HTTPS Support** | SSL/TLS encryption for secure dashboard access | ✅ Optional |
+| **Rate Limiting** | 60 requests/minute per IP to prevent abuse | ✅ Active |
+| **Audit Logging** | Complete access logs with timestamps and IPs | ✅ Active |
+| **SHA-256 Hashing** | API keys encrypted, never stored in plain text | ✅ Active |
+| **Security Headers** | CSP, X-Frame-Options, XSS protection | ✅ Active |
+| **Multi-tenant Isolation** | Separate API keys and data per client | ✅ Active |
+
+### For Production Deployment
+
+```yaml
+Recommended Security Setup:
+  ├── Enable IP whitelisting for client office IPs
+  ├── Use Cloudflare Tunnel or Let's Encrypt for HTTPS
+  ├── Deploy behind firewall or cloud VPC
+  ├── Regular audit log reviews
+  └── Rotate API keys every 30 days (configurable)
+
 ### 🖱️ Interactive Graph Controls
 | Action | Result |
 |--------|--------|
