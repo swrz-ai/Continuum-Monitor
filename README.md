@@ -112,3 +112,8 @@ powershell -ExecutionPolicy Bypass -File Continuum_Monitor_v5.0.ps1
 
 # Access dashboard (replace locahost with your server's IP for remote access)
 http://localhost:18503/dashboard?tenant=Demo&key=demo-123
+**Quick Links:** [GitHub](https://github.com/swrz-ai/Continuum-Monitor) | [Website](https://swrz-ai.github.io/Continuum-Monitor/) | [Security](#security) | [Terms](#) | [Privacy](#)
+
+**Security Status:** 🔒 IP Whitelisting Ready | 🔐 HTTPS Ready | 📊 Rate Limiting Active | 📝 Audit Logging
+
+© 2026 Continuum Monitor. All rights reserved. | v5.0 | Enterprise-Grade Security Included
