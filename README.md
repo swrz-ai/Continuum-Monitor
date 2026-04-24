@@ -78,12 +78,20 @@ Continuum Monitor is built differently:
 | **Security Headers** | CSP, X-Frame-Options, XSS protection | ✅ Active |
 | **Multi-tenant Isolation** | Separate API keys and data per client | ✅ Active |
 
-### For Production Deployment
+---
 
-```yaml
-Recommended Security Setup:
-  ├── Enable IP whitelisting for client office IPs
-  ├── Use Cloudflare Tunnel or Let's Encrypt for HTTPS
-  ├── Deploy behind firewall or cloud VPC
-  ├── Regular audit log reviews
-  └── Rotate API keys every 30 days (configurable)
+## 🏭 Industrial IoT Monitoring (NEW in v5.0)
+
+Monitor industrial equipment alongside your IT infrastructure:
+
+**Supported Protocols:**
+- 🔌 **Modbus TCP** - PLCs, sensors, flow meters, pressure gauges
+- 📡 **SNMP** - Industrial routers, power monitors, network devices
+- 🏭 **Factory floor monitoring** - SCADA integration
+
+**Quick Start:**
+```powershell
+# Download industrial extension
+git clone https://github.com/swrz-ai/Continuum-Monitor
+cd Continuum-Monitor
+pwsh Continuum_Industrial.ps1
