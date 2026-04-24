@@ -1,4 +1,4 @@
-# Corrected index.html with accurate pricing
+# Complete corrected index.html with proper header, footer, and pricing
 @'
 <!DOCTYPE html>
 <html lang="en">
@@ -255,6 +255,15 @@
             color: #60a5fa;
             text-decoration: none;
         }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            margin: 15px 0;
+        }
+        .footer-links a {
+            margin: 0 10px;
+        }
         .badge {
             background: #7c3aed20;
             color: #c084fc;
@@ -300,6 +309,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
             <h1>Continuum Monitor <span>Cross-Platform Infrastructure Monitoring</span></h1>
             <p>Monitor Windows, Linux, macOS, ports, websites, and SSL certificates.</p>
@@ -316,7 +326,8 @@
                 <a href="https://github.com/swrz-ai/Continuum-Monitor" class="btn btn-secondary">Download v5.0</a>
             </div>
         </div>
-        
+
+        <!-- Features Section -->
         <div class="features">
             <h2 class="section-title">Why Choose Continuum Monitor?</h2>
             <p class="section-subtitle">Enterprise monitoring made simple, affordable, and powerful</p>
@@ -339,7 +350,8 @@
                 <div class="feature-card"><div class="feature-icon">🏭</div><h3>Industrial IoT</h3><p>Monitor PLCs, Modbus sensors, SCADA systems, and factory floor equipment</p></div>
             </div>
         </div>
-        
+
+        <!-- Graph Controls Demo -->
         <div class="graph-demo">
             <h3>📊 Interactive Graph Controls</h3>
             <div class="graph-controls">
@@ -350,7 +362,8 @@
             </div>
             <p style="margin-top: 15px; font-size: 14px; color: #9ca3af;">12-hour response time and uptime trends with full interactivity</p>
         </div>
-        
+
+        <!-- Pricing Section -->
         <div id="pricing" class="pricing">
             <h2 class="section-title">Simple, Transparent Pricing</h2>
             <p class="section-subtitle">Choose the plan that fits your needs</p>
@@ -382,6 +395,7 @@
                             <li>✓ IP Whitelisting</li>
                             <li>✓ HTTPS Ready</li>
                             <li>✓ Audit Logging</li>
+                            <li>✓ <strong>Industrial IoT Ready</strong></li>
                         </ul>
                         <div class="industrial-badge">➕ Industrial IoT Add-on: +$99/month</div>
                         <a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Choose Plan</a>
@@ -391,21 +405,38 @@
                 <!-- Enterprise Card -->
                 <div class="pricing-card">
                     <div class="pricing-header"><h3>Enterprise</h3><div class="price">Custom</div><p>For large organizations</p></div>
-                    <div class="pricing-body"><ul><li>✓ Unlimited nodes</li><li>✓ Unlimited tenants</li><li>✓ 24/7 support</li><li>✓ Custom integrations</li><li>✓ 99.9% SLA</li><li>✓ White-label options</li><li>✓ Dedicated security review</li><li>✓ Industrial IoT included</li></ul><a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Contact Us</a></div>
+                    <div class="pricing-body"><ul><li>✓ Unlimited nodes</li><li>✓ Unlimited tenants</li><li>✓ 24/7 support</li><li>✓ Custom integrations</li><li>✓ 99.9% SLA</li><li>✓ White-label options</li><li>✓ Dedicated security review</li><li>✓ <strong>Industrial IoT Included</strong></li></ul><a href="mailto:hello@continuum-monitor.com" class="btn btn-primary">Contact Us</a></div>
                 </div>
             </div>
             <div class="pricing-security-note">🔒 <strong>All Professional and Enterprise plans include:</strong> IP whitelisting, HTTPS support, rate limiting (60/min), audit logging, and SHA-256 encryption. <a href="#security">Learn more about security →</a></div>
         </div>
-        
+
+        <!-- Footer -->
         <div class="footer">
-            <p>📧 <a href="mailto:hello@continuum-monitor.com">hello@continuum-monitor.com</a> | Support: <a href="mailto:support@continuum-monitor.com">support@continuum-monitor.com</a></p>
-            <p><a href="https://sites.google.com/view/continuum-portal/home">Client Portal</a> | <a href="https://github.com/swrz-ai/Continuum-Monitor">GitHub</a> | <a href="https://www.linkedin.com/in/waseem-raza-b99752400/">LinkedIn</a> | <a href="https://discord.gg/YOUR_INVITE_CODE">Discord</a> | <a href="https://continuum-monitor.slack.com/">Slack</a> | <a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
-            <div class="disclaimer-note">⚠️ <strong>Network Notice:</strong> For optimal accuracy, wired Ethernet is recommended. WiFi may cause occasional false alerts due to packet loss, latency spikes, or disconnections.<br>🔒 <strong>Security:</strong> IP whitelisting available | HTTPS ready | Rate limiting active | Audit logging enabled | SHA-256 encryption</div>
-            <p style="margin-top: 15px;">Cross-platform infrastructure monitoring with interactive graphs | © 2026 Continuum Monitor. All rights reserved. | v5.0</p>
+            <div class="footer-links">
+                <a href="mailto:hello@continuum-monitor.com">📧 hello@continuum-monitor.com</a> | 
+                <a href="mailto:support@continuum-monitor.com">📧 support@continuum-monitor.com</a>
+            </div>
+            <div class="footer-links">
+                <a href="https://sites.google.com/view/continuum-portal/home">Client Portal</a> |
+                <a href="https://github.com/swrz-ai/Continuum-Monitor">GitHub</a> |
+                <a href="https://www.linkedin.com/in/waseem-raza-b99752400/">LinkedIn</a> |
+                <a href="https://discord.gg/YOUR_INVITE_CODE">Discord</a> |
+                <a href="https://continuum-monitor.slack.com/">Slack</a> |
+                <a href="terms.html">Terms</a> |
+                <a href="privacy.html">Privacy</a> |
+                <a href="network-requirements.html">Network Requirements</a>
+            </div>
+            <div class="disclaimer-note">
+                ⚠️ <strong>Network Notice:</strong> For optimal accuracy, wired Ethernet is recommended. WiFi may cause occasional false alerts due to packet loss, latency spikes, or disconnections.<br>
+                🔒 <strong>Security:</strong> IP whitelisting available | HTTPS ready | Rate limiting active | Audit logging enabled | SHA-256 encryption
+            </div>
+            <p style="margin-top: 15px;">Cross-platform infrastructure monitoring with interactive graphs | © 2026 Continuum Monitor. All rights reserved. | v5.0 | Industrial IoT Ready</p>
         </div>
     </div>
 </body>
 </html>
 '@ | Out-File -FilePath "C:\Users\Administrator\Continuum\index.html" -Encoding UTF8
 
-Write-Host "✅ GitHub HTML file updated with correct pricing!" -ForegroundColor Green
+Write-Host "✅ GitHub HTML file created with fixed header, footer, and pricing!" -ForegroundColor Green
+Write-Host "📁 Location: C:\Users\Administrator\Continuum\index.html" -ForegroundColor Cyan
