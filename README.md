@@ -1,4 +1,7 @@
 # Continuum Monitor
+
+📄 **MIT Licensed** - Free for commercial use, modification, and distribution.
+
 ## Cross-Platform Infrastructure Monitoring | v5.0
 
 ![Version](https://img.shields.io/badge/version-5.0-green)
