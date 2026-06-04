@@ -1,4 +1,4 @@
-# Continuum Monitor v5.0
+# Continuum Monitor v5.1
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
