@@ -3,21 +3,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
 [![Made with Go](https://img.shields.io/badge/Made%20with-Go-1E90BE.svg)](https://golang.org/)
-[![Quantum Ready](https://img.shields.io/badge/Quantum-PQC%20Ready-8A2BE2)](https://nginx.org/en/docs/)
-[![AI Powered](https://img.shields.io/badge/AI-Anomaly%20Detection-FF6B35)](https://github.com/continuum-monitor/continuum-monitor)
 
-**Enterprise-grade infrastructure monitoring with real-time WebSocket, Modbus IoT integration, and AI-powered anomaly detection.**
+**Enterprise-grade infrastructure monitoring with real-time WebSocket and Modbus IoT integration.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-https://continuum--monitor.com/demo--enterprise-60a5fa)](https://continuum-monitor.com/demo-enterprise)
 
 ---
 
 ## 🚀 Features
-
-### 🤖 AI-Powered
-- **Real-time Anomaly Detection** – 500+ trained ML models
-- **Predictive Response Times** – Forecast issues before they happen
-- **Self-learning** – Models retrain continuously
 
 ### ⚡ Real-time WebSocket
 - **3-second update intervals** – 60% less latency than HTTP polling
@@ -29,7 +22,6 @@
 
 ### 🔒 Enterprise Security
 - **TLS 1.3 + AES-256-GCM** – Bank-grade encryption
-- **Post-Quantum Ready** – X25519MLKEM768 hybrid key exchange
 - **Multi-tenant isolation** – Separate API keys per client
 - **IP whitelisting** – Restrict dashboard access
 - **Rate limiting** – 10 requests/second
