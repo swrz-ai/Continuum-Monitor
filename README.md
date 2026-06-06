@@ -104,4 +104,3 @@ Continuum Monitor uses a **microservices-inspired architecture** with isolated c
 │ Dashboard │ Terms/Health │ Real-time Data │
 │ (Production)│ Privacy/Ping │ (3s intervals) │
 └───────────────┴───────────────┴─────────────────────────────┘
-
