@@ -1,12 +1,10 @@
-# Continuum Monitor v5.1
+# Continuum Monitor v5.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
 [![Made with Go](https://img.shields.io/badge/Made%20with-Go-1E90BE.svg)](https://golang.org/)
-[![PWA](https://img.shields.io/badge/PWA-Installable-5A0FC8)](https://web.dev/progressive-web-apps/)
-[![MFA Ready](https://img.shields.io/badge/MFA-TOTP%20Ready-22c55e)](https://github.com/continuum-monitor/continuum-monitor)
 
-**Enterprise-grade infrastructure monitoring with real-time WebSocket, Modbus IoT integration, and mobile PWA support.**
+**Enterprise-grade infrastructure monitoring with real-time WebSocket and Modbus IoT integration.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-https://continuum--monitor.com/demo--enterprise-60a5fa)](https://continuum-monitor.com/demo-enterprise)
 
@@ -41,7 +39,7 @@ Continuum Monitor is **MIT licensed** for individual, internal business, and ope
 
 For commercial licenses, white-label rights, or enterprise support:
 
-- **Email:** licensing@continuum-monitor.com
+- **Email:** hello@continuum-monitor.com
 - **Subject:** Commercial License Request
 - **Response:** Within 24 hours
 
@@ -51,11 +49,11 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 
 - Contribute 10% of Continuum-related revenue
 - Receive priority support and white-label rights
-- **Contact:** partnerships@continuum-monitor.com
+- **Contact:** hello@continuum-monitor.com (Subject: Partnership Inquiry)
 
 ---
 
-## 🚀 Features
+## Features
 
 ### ⚡ Real-time WebSocket
 - **3-second update intervals** – 60% less latency than HTTP polling
@@ -71,8 +69,6 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 - **IP whitelisting** – Restrict dashboard access
 - **Rate limiting** – 10 requests/second
 - **Audit logging** – Complete access tracking
-- **MFA (TOTP)** – Multi-factor authentication support
-- **RBAC** – Admin and viewer roles
 
 ### 📊 Monitoring Capabilities
 - **Cross-platform** – Linux, Windows, macOS
@@ -80,11 +76,6 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 - **ICMP ping** – Network devices
 - **Port checks** – SSH, MySQL, PostgreSQL, any TCP port
 - **SSL certificate expiry** – Color-coded warnings
-
-### 📱 PWA Mobile App
-- **Installable on Android & iOS** – Add to home screen
-- **Offline support** – Service worker caching
-- **Mobile-optimized** – Responsive design
 
 ### 🛡️ Resilience
 - **Systemd auto-restart** – 5-second recovery
@@ -94,21 +85,9 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 ### 🎨 User Customization
 - **Save preferences** – Theme, widgets, refresh rate
 - **Persistent settings** – Survive app restarts
-
+  
 ---
 
 ## 🏗️ Architecture
 
 Continuum Monitor uses a **microservices-inspired architecture** with isolated components for maximum stability and security.
-┌─────────────────────────────────────────────────────────────┐
-│ Cloudflare CDN + DDoS │
-│ (DDoS protection, CDN caching) │
-├─────────────────────────────────────────────────────────────┤
-│ Nginx (SSL/TLS 1.3) │
-│ (Reverse proxy, rate limiting) │
-├───────────────┬───────────────┬─────────────────────────────┤
-│ Port 18508 │ Port 18509 │ Port 18506 │
-│ 🖥️ Go App │ 📄 Maintenance│ 🔌 WebSocket │
-│ Dashboard │ Terms/Health │ Real-time Data │
-│ (Production)│ Privacy/Ping │ (3s intervals) │
-└───────────────┴───────────────┴─────────────────────────────┘
