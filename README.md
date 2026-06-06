@@ -3,10 +3,55 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
 [![Made with Go](https://img.shields.io/badge/Made%20with-Go-1E90BE.svg)](https://golang.org/)
+[![PWA](https://img.shields.io/badge/PWA-Installable-5A0FC8)](https://web.dev/progressive-web-apps/)
+[![MFA Ready](https://img.shields.io/badge/MFA-TOTP%20Ready-22c55e)](https://github.com/continuum-monitor/continuum-monitor)
 
-**Enterprise-grade infrastructure monitoring with real-time WebSocket and Modbus IoT integration.**
+**Enterprise-grade infrastructure monitoring with real-time WebSocket, Modbus IoT integration, and mobile PWA support.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-https://continuum--monitor.com/demo--enterprise-60a5fa)](https://continuum-monitor.com/demo-enterprise)
+
+---
+
+## 📋 Commercial Use Policy
+
+> **⚠️ IMPORTANT – READ BEFORE COMMERCIAL USE**
+
+Continuum Monitor is **MIT licensed** for individual, internal business, and open source use.
+
+### ✅ Allowed Without Payment
+
+| Use Case | Allowed? | Conditions |
+|----------|----------|------------|
+| Personal projects | ✅ Yes | None |
+| Internal company monitoring (self-hosted) | ✅ Yes | None |
+| Open source integrations | ✅ Yes | Must retain copyright |
+| Education & research | ✅ Yes | None |
+| Non-profit organizations | ✅ Yes | None |
+
+### ⚠️ Requires Commercial License
+
+| Use Case | License Required | Fee |
+|----------|------------------|-----|
+| **Reselling to multiple clients** (MSPs, consultants) | ✅ Yes | $999/year |
+| **White-label / rebranded distribution** | ✅ Yes | $4,999/year |
+| **Embedding in commercial product** | ✅ Yes | Contact sales |
+| **Offering as SaaS without source disclosure** | ✅ Yes | Contact sales |
+
+### 📞 Commercial Licensing
+
+For commercial licenses, white-label rights, or enterprise support:
+
+- **Email:** licensing@continuum-monitor.com
+- **Subject:** Commercial License Request
+- **Response:** Within 24 hours
+
+### 🤝 Revenue Sharing Option
+
+Small consultancies and system integrators may qualify for **revenue sharing** instead of upfront license fees:
+
+- Contribute 10% of Continuum-related revenue
+- Receive priority support and white-label rights
+- **Contact:** partnerships@continuum-monitor.com
 
 ---
 
@@ -26,6 +71,8 @@
 - **IP whitelisting** – Restrict dashboard access
 - **Rate limiting** – 10 requests/second
 - **Audit logging** – Complete access tracking
+- **MFA (TOTP)** – Multi-factor authentication support
+- **RBAC** – Admin and viewer roles
 
 ### 📊 Monitoring Capabilities
 - **Cross-platform** – Linux, Windows, macOS
@@ -34,10 +81,19 @@
 - **Port checks** – SSH, MySQL, PostgreSQL, any TCP port
 - **SSL certificate expiry** – Color-coded warnings
 
+### 📱 PWA Mobile App
+- **Installable on Android & iOS** – Add to home screen
+- **Offline support** – Service worker caching
+- **Mobile-optimized** – Responsive design
+
 ### 🛡️ Resilience
 - **Systemd auto-restart** – 5-second recovery
 - **Daily backups** – 7-day retention
 - **Log rotation** – Automatic disk space management
+
+### 🎨 User Customization
+- **Save preferences** – Theme, widgets, refresh rate
+- **Persistent settings** – Survive app restarts
 
 ---
 
