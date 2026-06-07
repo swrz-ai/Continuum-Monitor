@@ -1,15 +1,3 @@
-# Continuum Monitor v5.0
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
-[![Made with Go](https://img.shields.io/badge/Made%20with-Go-1E90BE.svg)](https://golang.org/)
-
-**Enterprise-grade infrastructure monitoring with real-time WebSocket and Modbus IoT integration.**
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-https://continuum--monitor.com/demo--enterprise-60a5fa)](https://continuum-monitor.com/demo-enterprise)
-
----
-
 ## 📋 Commercial Use Policy
 
 > **⚠️ IMPORTANT – READ BEFORE COMMERCIAL USE**
@@ -30,14 +18,12 @@ Continuum Monitor is **MIT licensed** for individual, internal business, and ope
 
 | Use Case | License Required | Fee |
 |----------|------------------|-----|
-| **Reselling to multiple clients** (MSPs, consultants) | ✅ Yes | $999/year |
-| **White-label / rebranded distribution** | ✅ Yes | $4,999/year |
-| **Embedding in commercial product** | ✅ Yes | Contact sales |
-| **Offering as SaaS without source disclosure** | ✅ Yes | Contact sales |
+| Reselling to multiple clients (MSPs, consultants) | ✅ Yes | $999/year |
+| White-label / rebranded distribution | ✅ Yes | $4,999/year |
+| Embedding in commercial product | ✅ Yes | Contact sales |
+| Offering as SaaS without source disclosure | ✅ Yes | Contact sales |
 
 ### 📞 Commercial Licensing
-
-For commercial licenses, white-label rights, or enterprise support:
 
 - **Email:** hello@continuum-monitor.com
 - **Subject:** Commercial License Request
@@ -53,7 +39,7 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 
 ---
 
-## Features
+## 🚀 Features
 
 ### ⚡ Real-time WebSocket
 - **3-second update intervals** – 60% less latency than HTTP polling
@@ -85,13 +71,12 @@ Small consultancies and system integrators may qualify for **revenue sharing** i
 ### 🎨 User Customization
 - **Save preferences** – Theme, widgets, refresh rate
 - **Persistent settings** – Survive app restarts
-  
+
 ---
 
 ## 🏗️ Architecture
 
 Continuum Monitor uses a **microservices-inspired architecture** with isolated components for maximum stability and security.
-
 ┌─────────────────────────────────────────────────────────────┐
 │ Cloudflare CDN + DDoS │
 │ (DDoS protection, CDN caching) │
@@ -104,3 +89,4 @@ Continuum Monitor uses a **microservices-inspired architecture** with isolated c
 │ Dashboard │ Terms/Health │ Real-time Data │
 │ (Production)│ Privacy/Ping │ (3s intervals) │
 └───────────────┴───────────────┴─────────────────────────────┘
+
