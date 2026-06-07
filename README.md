@@ -1,3 +1,15 @@
+# Continuum Monitor v5.0
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Report Card](https://goreportcard.com/badge/github.com/continuum-monitor/continuum-monitor)](https://goreportcard.com/report/github.com/continuum-monitor/continuum-monitor)
+[![Made with Go](https://img.shields.io/badge/Made%20with-Go-1E90BE.svg)](https://golang.org/)
+
+**Enterprise-grade infrastructure monitoring with real-time WebSocket and Modbus IoT integration.**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-https://continuum--monitor.com/demo--enterprise-60a5fa)](https://continuum-monitor.com/demo-enterprise)
+
+---
+
 ## 📋 Commercial Use Policy
 
 > **⚠️ IMPORTANT – READ BEFORE COMMERCIAL USE**
