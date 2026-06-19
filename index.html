@@ -74,6 +74,7 @@
         .badge-go { background: #00ADD8; color: white; }
         .badge-modbus { background: #22c55e; color: white; }
         .badge-crowdsec { background: #8B5CF6; color: white; }
+        .badge-mfa { background: #fbbf24; color: #1a2535; }
         
         .hero-stats {
             display: grid;
@@ -90,6 +91,21 @@
         }
         .hero-stat-number { font-size: 32px; font-weight: bold; color: #60a5fa; }
         .hero-stat-label { font-size: 12px; color: #9ca3af; margin-top: 8px; }
+
+        .mfa-banner {
+            background: linear-gradient(135deg, #fbbf2420, #f59e0b20);
+            border: 1px solid #fbbf24;
+            border-radius: 40px;
+            padding: 12px 24px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #fbbf24;
+        }
+        .mfa-banner a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
         
         .card {
             background: #1e2a3a;
@@ -144,6 +160,9 @@
             text-align: center;
             font-size: 12px;
         }
+        .security-item-live {
+            border: 1px solid #fbbf24;
+        }
         
         .btn {
             display: inline-block;
@@ -191,6 +210,7 @@
             <span class="badge">📊 Real-Time WebSocket</span>
             <span class="badge">🔐 TLS 1.3</span>
             <span class="badge">🏢 Multi-Tenant</span>
+            <span class="badge badge-mfa">🔐 MFA NOW LIVE</span>
         </div>
     </div>
 
@@ -199,6 +219,12 @@
         <div class="hero-stat"><div class="hero-stat-number">500+</div><div class="hero-stat-label">Max Nodes</div></div>
         <div class="hero-stat"><div class="hero-stat-number">365</div><div class="hero-stat-label">Days Retention</div></div>
         <div class="hero-stat"><div class="hero-stat-number">99.9%</div><div class="hero-stat-label">Uptime SLA</div></div>
+    </div>
+
+    <!-- MFA Banner -->
+    <div class="mfa-banner">
+        🚀 Week 2: <strong>MFA (TOTP) is NOW LIVE!</strong> Add an extra layer of security to your monitoring stack. 
+        <a href="https://continuum-monitor.com/dashboard?tenant=Production&key=prod-123">Try it now →</a>
     </div>
 
     <div class="card">
@@ -260,7 +286,7 @@
             <div class="security-item">✅ Rate Limiting (10r/s)</div>
             <div class="security-item">✅ Security Headers (X-Frame, XSS)</div>
             <div class="security-item">✅ API Key Rotation</div>
-            <div class="security-item">✅ MFA (TOTP)</div>
+            <div class="security-item security-item-live">✅ MFA (TOTP) – NOW LIVE 🔐</div>
             <div class="security-item">✅ Audit Logging</div>
             <div class="security-item">✅ Daily Backups (7-day)</div>
             <div class="security-item">✅ Cloudflare DDoS</div>
