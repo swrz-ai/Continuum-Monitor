@@ -46,10 +46,8 @@ Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → Cr
               (Go + Modbus)   (Terms/Health)  (Real-time)
               
 2. Quick Start –
-3.  
-git clone https://github.com/swrz-ai/Continuum-Monitor.git
-cd Continuum-Monitor
-go build -o continuum-go main.go
-./continuum-go
+   
+git clone https://github.com/swrz-ai/Continuum-Monitor.git 
+cd Continuum-Monitor go build -o continuum-go main.go./continuum-go
 Then open http://localhost:18508/static/index.html in your browser.
 
