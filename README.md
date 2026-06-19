@@ -35,12 +35,22 @@ Or sign up for a free tenant:
 
 ---
 
-## 🛠️ Architecture
+1. Architecture Diagram Formatting – The alignment is slightly off. Here's a cleaner version:
 
+text
 Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → Crowdsec (IDS)
-↓
-┌───────────────┼───────────────┐
-↓ ↓ ↓
-Port 18508 Port 18509 Port 18506
-Dashboard Maintenance WebSocket
-(Go + Modbus) (Terms/Health) (Real-time)
+                                    ↓
+                    ┌───────────────┼───────────────┐
+                    ↓               ↓               ↓
+              Port 18508      Port 18509      Port 18506
+              Dashboard       Maintenance     WebSocket
+              (Go + Modbus)   (Terms/Health)  (Real-time)
+2. Quick Start – Missing closing backticks for the code block. Should be:
+
+bash
+git clone https://github.com/swrz-ai/Continuum-Monitor.git
+cd Continuum-Monitor
+go build -o continuum-go main.go
+./continuum-go
+Then open http://localhost:18508/static/index.html in your browser.
+
