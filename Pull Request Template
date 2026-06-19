@@ -1,20 +1,29 @@
-## Description
+Description
+This PR adds Multi-Factor Authentication (TOTP) to Continuum Monitor as part of Week 2 of the 14-week enterprise release plan.
 
-Please include a summary of the change.
+What's new:
 
-## Type of change
+TOTP support with Google Authenticator, Authy, and Microsoft Authenticator
 
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
+Backup codes for account recovery
 
-## Testing
+Trusted device option (30 days)
 
-Describe the tests you ran.
+Full audit logging of MFA events
 
-## Checklist
+MFA status endpoint (/mfa/status), setup (/mfa/setup), and verify (/mfa/verify)
 
-- [ ] My code follows the style guidelines
-- [ ] I have tested my changes
-- [ ] I have updated the documentation
+MFA badge and banner on the marketing page
+
+Also includes:
+
+Code hardening improvements (tested on test droplet):
+
+Systemd units for logs + AI services
+
+Input validation on /api/logs and /api/feedback
+
+Header‑based API key authentication (X-API-Key)
+
+Updated README with MFA and 14‑week plan (removed weekly table for suspense)
+
