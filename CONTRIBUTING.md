@@ -1,18 +1,23 @@
 # Contributing to Continuum Monitor
 
-We love your input! We want to make contributing as easy as possible.
+We welcome contributions! By contributing, you agree to the following:
+
+## Contributor License Agreement
+
+By submitting a pull request, you agree that:
+
+1. You grant us a perpetual, worldwide, non-exclusive, royalty-free license to use, modify, and distribute your contribution.
+2. You confirm that you have the right to grant this license.
+3. You agree that your contribution is original and does not infringe on any third-party rights.
 
 ## How to Contribute
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes.
+4. Push to your fork.
+5. Open a pull request.
 
-## Development Setup
+## Code of Conduct
 
-```powershell
-git clone https://github.com/swrz-ai/Continuum-Monitor
-cd Continuum-Monitor
-pwsh Continuum_Monitor_v5.0.ps1
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
