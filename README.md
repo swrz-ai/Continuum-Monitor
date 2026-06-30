@@ -4,8 +4,6 @@
   </a>
 </p>
 
-> **If you find Continuum Monitor useful, please consider starring the repo ⭐ – it helps others discover the project!**
-
 # 📊 Continuum Monitor
 
 **Enterprise‑grade infrastructure monitoring with real‑time WebSocket, native Modbus IoT, and AI anomaly detection.**
@@ -16,6 +14,8 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/swrz-ai/Continuum-Monitor)](https://goreportcard.com/report/github.com/swrz-ai/Continuum-Monitor)
 
 ---
+
+> **If you find Continuum Monitor useful, please consider starring the repo ⭐ – it helps others discover the project!**
 
 ## 🚀 Live Demo
 
