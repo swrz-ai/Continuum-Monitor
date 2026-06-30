@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://github.com/swrz-ai/Continuum-Monitor">
+    <img src="https://img.shields.io/github/stars/swrz-ai/Continuum-Monitor?style=social" alt="Star on GitHub">
+  </a>
+</p>
+
+> **If you find Continuum Monitor useful, please consider starring the repo ⭐ – it helps others discover the project!**
+
 # 📊 Continuum Monitor
 
 **Enterprise‑grade infrastructure monitoring with real‑time WebSocket, native Modbus IoT, and AI anomaly detection.**
