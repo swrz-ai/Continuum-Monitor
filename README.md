@@ -44,13 +44,8 @@ Or sign up for a free tenant:
 ---
 
 ## 🏗️ Architecture
-Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → Crowdsec (IDS)
-↓
-┌───────────────┼───────────────┐
-↓ ↓ ↓
-Port 18508 Port 18509 Port 18506
-Dashboard Maintenance WebSocket
-(Go + Modbus) (Terms/Health) (Real-time)
+
+Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → Crowdsec (IDS) ↓ ┌───────────────┼───────────────┐ ↓ ↓ ↓ Port 18508 Port 18509 Port 18506 Dashboard Maintenance WebSocket (Go + Modbus) (Terms/Health) (Real-time)
 
 ---
 
