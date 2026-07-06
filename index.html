@@ -84,6 +84,7 @@
         .badge-modbus { background: #22c55e; color: white; }
         .badge-crowdsec { background: #8B5CF6; color: white; }
         .badge-mfa { background: #fbbf24; color: #1a2535; }
+        .badge-rabbitmq { background: #FF6600; color: white; } /* new */
         
         .hero-stats {
             display: grid;
@@ -150,6 +151,8 @@
         .feature-modbus h3 { color: #22c55e; }
         .feature-crowdsec { border-left-color: #8B5CF6; }
         .feature-crowdsec h3 { color: #8B5CF6; }
+        .feature-rabbitmq { border-left-color: #FF6600; }
+        .feature-rabbitmq h3 { color: #FF6600; }
         
         .code-block {
             background: #0f1722;
@@ -226,6 +229,7 @@
             <span class="badge badge-go">⚡ Go Powered</span>
             <span class="badge badge-modbus">🏭 Modbus IoT</span>
             <span class="badge badge-crowdsec">🛡️ Crowdsec IDS</span>
+            <span class="badge badge-rabbitmq">🔁 Async Modbus</span> <!-- new -->
             <span class="badge">📊 Real-Time WebSocket</span>
             <span class="badge">🔐 TLS 1.3</span>
             <span class="badge">🏢 Multi-Tenant</span>
@@ -283,6 +287,11 @@
                 <h3>Crowdsec IDS/IPS</h3>
                 <p>Real-time SSH brute force & web attack detection. 19,000+ malicious IPs blocked.</p>
             </div>
+            <div class="feature feature-rabbitmq">
+                <div class="feature-icon">🔁</div>
+                <h3>Async Modbus (RabbitMQ)</h3>
+                <p>Non‑blocking Modbus reads – instantly return `202 Accepted` while processing in the background. Dashboard stays responsive even with slow devices.</p>
+            </div>
             <div class="feature">
                 <div class="feature-icon">📊</div>
                 <h3>Cross-Platform</h3>
@@ -322,7 +331,7 @@
     <div class="card">
         <h2>🏗️ Architecture</h2>
         <div class="code-block">
-Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → Crowdsec (IDS)
+Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → RabbitMQ (Async) → Crowdsec (IDS)
                                     ↓
                     ┌───────────────┼───────────────┐
                     ↓               ↓               ↓
