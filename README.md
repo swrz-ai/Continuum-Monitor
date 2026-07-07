@@ -41,16 +41,7 @@ Or sign up for a free tenant:
 | **📊 Audit Logging** | Full audit trail of dashboard accesses, MFA events, and API key usage |
 | **🏢 Multi‑Tenant** | Isolated views for multiple clients from one dashboard |
 | **🔒 Enterprise Security** | TLS 1.3, MFA, RBAC, rate limiting, and Crowdsec |
-
----
-
-## 📊 Performance
-
-Continuum Monitor is designed for scale. In our load tests with 100 concurrent users:
-- ✅ 0% failure rate
-- ⚡ Average response time: **2.19 ms**
-- 📈 95th percentile: **6.14 ms**
-- 🐇 RabbitMQ queue depth: **0** (consumers kept up instantly)
+| **📈 Scalable** | Load‑tested to 100 concurrent users with 0% failure and 2.19 ms average response time |
 
 ---
 
