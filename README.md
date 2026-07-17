@@ -13,7 +13,7 @@
 
 ## 🧠 Why We Built This
 
-We’ve seen too many manufacturing and industrial teams juggling five different dashboards – one for Modbus, one for cloud logs, one for security alerts, and none of them talking to each other.
+There are so many manufacturing and industrial teams juggling five different dashboards – one for Modbus, one for cloud logs, one for security alerts, and none of them talking to each other.
 
 Alerts are missed. Anomalies go unnoticed until something breaks.
 
