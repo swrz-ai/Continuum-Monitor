@@ -1,9 +1,9 @@
 # 🔍 Continuum Monitor
 
-[![Go version](https://img.shields.io/github/go-mod/go-version/yourusername/continuum-monitor)](https://golang.org/)
+[![Go version](https://img.shields.io/github/go-mod/go-version/swrz-ai/Continuum-Monitor)](https://golang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/continuum-monitor)](https://github.com/yourusername/continuum-monitor/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/continuum-monitor)](https://github.com/yourusername/continuum-monitor/network)
+[![GitHub stars](https://img.shields.io/github/stars/swrz-ai/Continuum-Monitor)](https://github.com/swrz-ai/Continuum-Monitor/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/swrz-ai/Continuum-Monitor)](https://github.com/swrz-ai/Continuum-Monitor/network)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 > **Stop chasing alerts. Start preventing incidents.**  
@@ -49,8 +49,8 @@ It’s open‑source, runs as a single Go binary, and connects to:
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/continuum-monitor.git
-cd continuum-monitor
+git clone https://github.com/swrz-ai/Continuum-Monitor.git
+cd Continuum-Monitor
 
 # Build the binary (Go 1.19+)
 go build -o continuum-go main.go
@@ -118,4 +118,4 @@ MIT – use it freely, just keep the copyright notice.
 ---
 
 **Made with ❤️ by the Continuum team.**  
-[Website](https://continuum.monitor) 
+[Website](https://continuum.monitor)
