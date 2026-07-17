@@ -118,4 +118,4 @@ MIT – use it freely, just keep the copyright notice.
 ---
 
 **Made with ❤️ by the Continuum team.**  
-[Website](https://continuum.monitor) · [Docs](https://docs.continuum.monitor) · [Blog](https://blog.continuum.monitor)
+[Website](https://continuum.monitor) · [Docs](https://docs.continuum.monitor) 
