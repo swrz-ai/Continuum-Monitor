@@ -24,7 +24,7 @@ It’s open‑source, runs as a single Go binary, and connects to:
 - AI anomaly detection
 - SLA tracking & incident grouping
 - Slack/Discord alerts (webhooks)
-- Role‑based access control
+- Role‑based access control (coming soon)
 
 ---
 
@@ -67,9 +67,19 @@ export RABBITMQ_URL=amqp://guest:guest@localhost  # optional
 
 Your dashboard is live at `http://localhost:18517`.
 
+---
+
 ### Option B: Cloud‑Hosted (Fully Managed)
 
-[👉 **Start your free 7‑day trial**](https://continuum.monitor/signup) – no credit card required, deploy in 60 seconds.
+Skip the setup – get a production‑ready instance in 60 seconds.
+
+| Tier | Price | Features |
+|------|-------|----------|
+| **Free** (Starter) | $0 / mo | 5 nodes, 7‑day retention, community Slack |
+| **Pro** | $49 / mo | Unlimited nodes, 30‑day retention, Slack alerts, AI predictions, 99.9% SLA |
+| **Enterprise** | $199 / mo | SSO, custom dashboards, audit logs, priority support, on‑premise deployment |
+
+[👉 **Start your free 7‑day Pro trial**](https://continuum.monitor/signup) – no credit card required.
 
 ---
 
