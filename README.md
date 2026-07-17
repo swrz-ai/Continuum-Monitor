@@ -90,7 +90,7 @@ Your dashboard is live at `http://localhost:18517`.
 
 - **Star this repo** – it helps others find it.
 - **Share it** with a colleague who’s fighting the same OT/IT battles.
-- **Join our [Slack](https://join.slack.com/t/your‑workspace/shared_invite/...)** – we discuss monitoring, share war stories, and help each other debug.
+- **Join our [Slack](https://join.slack.com/t/continuum-b1p7940/shared_invite/zt-447k68xi9-RN7Alf5DuxyYUysKRY0C5g)** – we discuss monitoring, share war stories, and help each other debug.
 
 ---
 
