@@ -1,381 +1,515 @@
+<!-- The exact same HTML we just deployed – I'll paste it again in a collapsible block for easy copy -->
+<details>
+<summary>📋 Click to expand the full dashboard HTML</summary>
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuum Monitor - Enterprise Infrastructure Monitoring</title>
-    <meta name="description" content="Open source infrastructure monitoring with real-time WebSocket (3s updates) and native Modbus IoT support. Monitor PLCs, servers, and cloud services from one dashboard.">
-    <meta name="keywords" content="Modbus monitoring, WebSocket monitoring, open source monitoring, IIoT, SCADA, infrastructure monitoring, DevOps, Crowdsec">
-    <meta name="author" content="Continuum Monitor">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Continuum Monitor - Enterprise Infrastructure Monitoring">
-    <meta property="og:description" content="Real-time WebSocket monitoring with Modbus IoT integration. Open source, self-hosted, enterprise security.">
-    <meta property="og:image" content="https://continuum-monitor.com/og-image.png">
-    <meta property="og:url" content="https://continuum-monitor.com">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Continuum Monitor">
-    <meta name="twitter:description" content="Real-time infrastructure monitoring with Modbus IoT and Crowdsec IDS.">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Continuum Monitor",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Linux, Windows, macOS",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "description": "Open source infrastructure monitoring with real-time WebSocket and Modbus IoT integration.",
-      "downloadUrl": "https://github.com/swrz-ai/Continuum-Monitor",
-      "license": "https://opensource.org/licenses/MIT"
-    }
-    </script>
-    
+    <title>Continuum Monitor – Interactive Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a2535 0%, #0f1722 100%);
-            color: #d1d5db;
-            line-height: 1.5;
-            padding: 40px 20px;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            background: #060d14;
+            color: #c8d6e5;
+            padding: 20px;
             min-height: 100vh;
         }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 {
-            background: linear-gradient(135deg, #60a5fa, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        .header p { color: #9ca3af; font-size: 18px; }
-        
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        .badge {
-            background: #1e293b;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        .badge-go { background: #00ADD8; color: white; }
-        .badge-modbus { background: #22c55e; color: white; }
-        .badge-crowdsec { background: #8B5CF6; color: white; }
-        .badge-mfa { background: #fbbf24; color: #1a2535; }
-        .badge-rabbitmq { background: #FF6600; color: white; } /* new */
-        
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .hero-stat {
-            background: #1e2a3a;
-            border-radius: 16px;
-            padding: 20px;
-            border: 1px solid #2d3a4a;
-        }
-        .hero-stat-number { font-size: 32px; font-weight: bold; color: #60a5fa; }
-        .hero-stat-label { font-size: 12px; color: #9ca3af; margin-top: 8px; }
-
-        .mfa-banner {
-            background: linear-gradient(135deg, #60a5fa20, #3b82f620);
-            border: 1px solid #60a5fa;
-            border-radius: 40px;
-            padding: 12px 24px;
-            text-align: center;
-            margin: 20px 0;
-            font-weight: 600;
-            color: #60a5fa;
-        }
-        .mfa-banner a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-        
-        .cta-section {
-            text-align: center;
-            margin: 20px 0 30px 0;
-        }
-        
-        .card {
-            background: #1e2a3a;
-            border: 1px solid #2d3a4a;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-        .card h2 { color: #60a5fa; font-size: 24px; margin-bottom: 20px; }
-        .card h3 { color: #60a5fa; font-size: 18px; margin-bottom: 15px; }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .feature {
-            background: #0f1722;
-            border-radius: 12px;
-            padding: 20px;
-            border-left: 3px solid #60a5fa;
-        }
-        .feature-icon { font-size: 28px; margin-bottom: 12px; }
-        .feature h3 { color: #60a5fa; font-size: 18px; margin-bottom: 8px; }
-        .feature p { font-size: 13px; color: #9ca3af; }
-        
-        .feature-modbus { border-left-color: #22c55e; }
-        .feature-modbus h3 { color: #22c55e; }
-        .feature-crowdsec { border-left-color: #8B5CF6; }
-        .feature-crowdsec h3 { color: #8B5CF6; }
-        .feature-rabbitmq { border-left-color: #FF6600; }
-        .feature-rabbitmq h3 { color: #FF6600; }
-        
-        .code-block {
-            background: #0f1722;
-            padding: 16px;
-            border-radius: 12px;
-            font-family: monospace;
-            font-size: 13px;
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-        
-        .security-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .security-item {
-            background: #0f1722;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 12px;
-        }
-        .security-item-live {
-            border: 1px solid #fbbf24;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #60a5fa, #3b82f6);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 5px;
-            transition: transform 0.2s;
-        }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #60a5fa;
-            color: #60a5fa;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 16px 40px;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #2d3a4a;
-            margin-top: 30px;
-            font-size: 12px;
-            color: #6b7280;
-        }
-        .footer a { color: #60a5fa; text-decoration: none; }
-        
-        @media (max-width: 768px) {
-            .hero-stats { grid-template-columns: repeat(2, 1fr); }
-            .header h1 { font-size: 32px; }
-        }
+        .container { max-width: 1400px; margin:0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom:20px; }
+        .header h1 { font-size:28px; color:#2ecc71; font-weight:400; }
+        .header h1::before { content:'> '; color:#1a7a4a; }
+        .header .time { color:#6b8f7a; font-size:14px; }
+        .badge-container { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
+        .badge { background:#0d1a2b; padding:4px 12px; border-radius:4px; border:1px solid #1a3a2a; font-size:11px; color:#6b8f7a; }
+        .badge-go { color:#2ecc71; border-color:#2ecc71; }
+        .badge-modbus { color:#2ecc71; border-color:#2ecc71; }
+        .badge-crowdsec { color:#2ecc71; border-color:#2ecc71; }
+        .badge-mfa { color:#fbbf24; border-color:#fbbf24; }
+        .badge-rabbitmq { color:#ff6600; border-color:#ff6600; }
+        .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:15px; margin:20px 0; }
+        .stat-card { background:#0d1a2b; border:1px solid #1a3a2a; border-radius:8px; padding:15px; text-align:center; }
+        .stat-number { font-size:28px; color:#2ecc71; font-weight:400; }
+        .stat-label { font-size:11px; color:#6b8f7a; text-transform:uppercase; letter-spacing:1px; }
+        .time-range { display:flex; gap:8px; margin:15px 0; flex-wrap:wrap; }
+        .time-range button { background:transparent; border:1px solid #1a3a2a; color:#6b8f7a; padding:4px 14px; border-radius:4px; cursor:pointer; font-family:inherit; font-size:12px; }
+        .time-range button.active { border-color:#2ecc71; color:#2ecc71; background:#0d1a2b; }
+        .card { background:#0d1a2b; border:1px solid #1a3a2a; border-radius:8px; padding:20px; margin-bottom:20px; }
+        .card h2 { color:#2ecc71; font-size:18px; font-weight:400; margin-bottom:15px; }
+        .card h2::before { content:'// '; color:#1a7a4a; }
+        .flex-row { display:flex; flex-wrap:wrap; gap:20px; }
+        .flex-row > * { flex:1; min-width:300px; }
+        table { width:100%; border-collapse:collapse; font-size:13px; }
+        th { text-align:left; color:#6b8f7a; font-weight:400; border-bottom:1px solid #1a3a2a; padding:8px 4px; }
+        td { padding:8px 4px; border-bottom:1px solid #1a3a2a; }
+        .status-badge { display:inline-block; padding:2px 10px; border-radius:12px; font-size:11px; }
+        .status-healthy { background:#1a3a2a; color:#2ecc71; }
+        .status-warning { background:#3a2a1a; color:#fbbf24; }
+        .status-error { background:#3a1a1a; color:#f87171; }
+        .status-unknown { background:#1a1a2a; color:#6b8f7a; }
+        .error { color:#f87171; }
+        .ok { color:#2ecc71; }
+        .prediction-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; }
+        .pred-card { background:#060d14; padding:15px; border-radius:6px; border-left:3px solid #2ecc71; }
+        .pred-card .node { font-weight:bold; color:#2ecc71; }
+        .pred-card .prob { font-size:20px; font-weight:bold; }
+        .pred-card .severity { font-size:12px; text-transform:uppercase; }
+        .pred-card .factors { font-size:11px; color:#6b8f7a; margin-top:8px; }
+        .pred-card .factors span { display:inline-block; margin-right:12px; }
+        .btn { background:#1a3a2a; border:1px solid #2ecc71; color:#2ecc71; padding:6px 16px; border-radius:4px; cursor:pointer; font-family:inherit; font-size:12px; transition:0.2s; }
+        .btn:hover { background:#2ecc71; color:#060d14; }
+        .btn-outline { background:transparent; }
+        .btn-icon { background:none; border:none; color:#6b8f7a; cursor:pointer; font-size:16px; }
+        .chart-container { position:relative; height:180px; width:100%; }
+        .incident { background:#060d14; padding:10px 15px; border-radius:6px; margin-bottom:10px; border-left:3px solid #fbbf24; }
+        .incident .title { font-weight:bold; }
+        .incident .meta { font-size:11px; color:#6b8f7a; }
+        .log-entry { font-size:12px; color:#6b8f7a; padding:4px 0; border-bottom:1px solid #1a3a2a; }
+        .log-entry .time { color:#4a5a6a; margin-right:10px; }
+        .footer { text-align:center; padding:20px 0; border-top:1px solid #1a3a2a; margin-top:20px; font-size:11px; color:#6b8f7a; }
+        .footer a { color:#2ecc71; text-decoration:none; }
+        .footer .disclaimer { font-size:10px; color:#4a5a6a; margin-top:4px; }
+        @media (max-width:600px){ .header{flex-direction:column;align-items:start;} .stats{grid-template-columns:1fr 1fr;} }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>Continuum Monitor</h1>
-        <p>Enterprise Infrastructure Monitoring with Real-Time WebSocket & Modbus IoT</p>
-        <div class="badge-container">
-            <span class="badge badge-go">⚡ Go Powered</span>
-            <span class="badge badge-modbus">🏭 Modbus IoT</span>
-            <span class="badge badge-crowdsec">🛡️ Crowdsec IDS</span>
-            <span class="badge badge-rabbitmq">🔁 Async Modbus</span> <!-- new -->
-            <span class="badge">📊 Real-Time WebSocket</span>
-            <span class="badge">🔐 TLS 1.3</span>
-            <span class="badge">🏢 Multi-Tenant</span>
-            <span class="badge badge-mfa">🔐 MFA NOW LIVE</span>
+        <div>
+            <h1>Continuum Monitor</h1>
+            <div class="badge-container">
+                <span class="badge badge-go">⚡ go_powered</span>
+                <span class="badge badge-modbus">🏭 modbus_iot</span>
+                <span class="badge badge-crowdsec">🛡️ crowdsec_ids</span>
+                <span class="badge badge-rabbitmq">🔁 async_modbus</span>
+                <span class="badge">📊 real-time_websocket</span>
+                <span class="badge">🔐 tls_1.3</span>
+                <span class="badge">🏢 multi-tenant</span>
+                <span class="badge badge-mfa">mfa_live</span>
+            </div>
+        </div>
+        <div class="time" id="headerTime">🕒 loading...</div>
+    </div>
+
+    <div class="stats" id="stats">
+        <div class="stat-card"><div class="stat-number" id="healthyNodes">0</div><div class="stat-label">healthy_nodes</div></div>
+        <div class="stat-card"><div class="stat-number" id="warningNodes">0</div><div class="stat-label">warning_nodes</div></div>
+        <div class="stat-card"><div class="stat-number" id="errorNodes">0</div><div class="stat-label">error_nodes</div></div>
+        <div class="stat-card"><div class="stat-number" id="updateInterval">3s</div><div class="stat-label">ws_update_interval</div></div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <div class="time-range" id="timeRange">
+            <button class="active" data-range="1h">1h</button>
+            <button data-range="6h">6h</button>
+            <button data-range="24h">24h</button>
+            <button data-range="7d">7d</button>
+            <button data-range="30d">30d</button>
+        </div>
+        <div>
+            <button class="btn btn-outline" onclick="exportPNG()">📸 export_png</button>
+            <button class="btn btn-outline" onclick="resetZoom()">🔍 reset_zoom</button>
         </div>
     </div>
 
-    <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-number">3s</div><div class="hero-stat-label">WebSocket Updates</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">500+</div><div class="hero-stat-label">Max Nodes</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">365</div><div class="hero-stat-label">Days Retention</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">99.9%</div><div class="hero-stat-label">Uptime SLA</div></div>
-    </div>
-
-    <!-- Week 4: Time Range Selector Banner -->
-    <div class="mfa-banner">
-        ⏱️ Week 4: <strong>Time Range Selector is NOW LIVE!</strong> Analyze data across 1h, 6h, 24h, 7d, and 30d. 
-        <a href="https://continuum-monitor.com/dashboard?tenant=Production&key=prod-123">Try it now →</a>
-    </div>
-
-    <!-- Start Free CTA -->
-    <div class="cta-section">
-        <a href="https://continuum-monitor.com/signup" class="btn btn-large">🚀 Start Monitoring – Free</a>
-        <p style="font-size: 13px; color: #9ca3af; margin-top: 10px;">No credit card required. Instant dashboard.</p>
+    <div class="flex-row">
+        <div class="card">
+            <h2>response_time_trend</h2>
+            <div class="chart-container"><canvas id="responseChart"></canvas></div>
+        </div>
+        <div class="card">
+            <h2>uptime_trend</h2>
+            <div class="chart-container"><canvas id="uptimeChart"></canvas></div>
+        </div>
     </div>
 
     <div class="card">
-        <h2>🚀 Live Demo</h2>
-        <p>Experience Continuum Monitor in action – real-time WebSocket data, Modbus IoT, and multi-tenant monitoring.</p>
-        <div style="margin-top: 20px;">
-            <a href="https://continuum-monitor.com/demo-enterprise" class="btn" target="_blank">🌐 Launch Enterprise Demo</a>
-            <a href="https://continuum-monitor.com/health" class="btn btn-outline" target="_blank">📊 Health Status</a>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <h2>node_status</h2>
+            <button class="btn btn-outline" onclick="refreshNodes()">⟳ refresh</button>
         </div>
-        <div class="code-block">
-            Demo URL: https://continuum-monitor.com/demo-enterprise<br>
-            Production: https://continuum-monitor.com/dashboard?tenant=Production&key=prod-123
+        <div style="overflow-x:auto;">
+            <table>
+                <thead><tr><th>node</th><th>status</th><th>response</th><th>last_check</th></tr></thead>
+                <tbody id="nodeTable"></tbody>
+            </table>
         </div>
     </div>
 
-    <div class="card">
-        <h2>✨ Key Features</h2>
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>Real-time WebSocket</h3>
-                <p>Live updates every 3 seconds. 60% less latency than traditional HTTP polling.</p>
+    <div class="flex-row">
+        <div class="card">
+            <h2>incidents <span style="font-size:14px;color:#6b8f7a;">// grouping_active</span></h2>
+            <div id="incidentsContainer">
+                <div class="incident">
+                    <div class="title">⚠️ active_incident: service_unavailable</div>
+                    <div class="meta">google_dns high_latency detected — 1 nodes affected | <span id="incidentTime">just now</span></div>
+                </div>
             </div>
-            <div class="feature feature-modbus">
-                <div class="feature-icon">🏭</div>
-                <h3>Modbus IoT Integration</h3>
-                <p>Native Modbus TCP support for PLCs, sensors, flow meters, and SCADA systems.</p>
-            </div>
-            <div class="feature feature-crowdsec">
-                <div class="feature-icon">🛡️</div>
-                <h3>Crowdsec IDS/IPS</h3>
-                <p>Real-time SSH brute force & web attack detection. 19,000+ malicious IPs blocked.</p>
-            </div>
-            <div class="feature feature-rabbitmq">
-                <div class="feature-icon">🔁</div>
-                <h3>Async Modbus (RabbitMQ)</h3>
-                <p>Non‑blocking Modbus reads – instantly return `202 Accepted` while processing in the background. Dashboard stays responsive even with slow devices.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📊</div>
-                <h3>Cross-Platform</h3>
-                <p>Monitor Linux, Windows, macOS, Docker, Kubernetes, and cloud services.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🏢</div>
-                <h3>Multi-Tenant</h3>
-                <p>Monitor multiple clients from one dashboard with isolated views.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile Responsive</h3>
-                <p>Monitor from any device – phone, tablet, or desktop.</p>
+        </div>
+        <div class="card">
+            <h2>modbus_tcp <span style="font-size:14px;color:#6b8f7a;">// live | 3s</span></h2>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead><tr><th>device</th><th>ip:port</th><th>register</th><th>value</th><th>status</th><th>last_check</th></tr></thead>
+                    <tbody id="modbusTable"></tbody>
+                </table>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <h2>🛡️ Enterprise Security</h2>
-        <div class="security-grid">
-            <div class="security-item">✅ TLS 1.3 + AES-256</div>
-            <div class="security-item">✅ Crowdsec IDS/IPS</div>
-            <div class="security-item">✅ Multi-tenant Isolation</div>
-            <div class="security-item">✅ Rate Limiting (10r/s)</div>
-            <div class="security-item">✅ Security Headers (X-Frame, XSS)</div>
-            <div class="security-item">✅ API Key Rotation</div>
-            <div class="security-item security-item-live">✅ MFA (TOTP) – NOW LIVE 🔐</div>
-            <div class="security-item">✅ Audit Logging</div>
-            <div class="security-item">✅ Daily Backups (7-day)</div>
-            <div class="security-item">✅ Cloudflare DDoS</div>
-            <div class="security-item">✅ Fail2ban</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <h2>ai_anomaly_detection</h2>
+            <div>
+                <span style="font-size:12px;color:#6b8f7a;">sensitivity:</span>
+                <select id="sensitivity" style="background:#060d14;color:#c8d6e5;border:1px solid #1a3a2a;padding:4px 8px;border-radius:4px;font-family:inherit;">
+                    <option value="low">low</option>
+                    <option value="medium" selected>medium</option>
+                    <option value="high">high</option>
+                </select>
+                <button class="btn btn-outline" onclick="refreshPredictions()">⟳ refresh</button>
+            </div>
+        </div>
+        <div class="prediction-grid" id="predictionGrid">
+            <div style="color:#6b8f7a;text-align:center;padding:20px;">Loading predictions...</div>
+        </div>
+        <div style="margin-top:15px;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;">
+            <div>
+                <span style="font-size:12px;color:#6b8f7a;">📊 prediction_accuracy</span>
+                <button class="btn btn-outline" onclick="refreshAccuracy()">⟳ refresh</button>
+            </div>
+            <div>
+                <span id="accuracyTotal">0</span> total &nbsp;
+                <span id="accuracyCorrect">0</span> correct &nbsp;
+                <span id="accuracyFalse">0</span> false &nbsp;
+                <span id="accuracyPercent" style="color:#2ecc71;">0%</span> accuracy
+            </div>
         </div>
     </div>
 
     <div class="card">
-        <h2>🏗️ Architecture</h2>
-        <div class="code-block">
-Internet → Cloudflare (DDoS) → Nginx (TLS 1.3) → Go App (WebSocket) → RabbitMQ (Async) → Crowdsec (IDS)
-                                    ↓
-                    ┌───────────────┼───────────────┐
-                    ↓               ↓               ↓
-              Port 18508      Port 18509      Port 18506
-              Dashboard       Maintenance     WebSocket
-              (Go + Modbus)   (Terms/Health)  (Real-time)
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <h2>audit_logs</h2>
+            <div>
+                <button class="btn btn-outline" onclick="refreshLogs()">⟳</button>
+                <button class="btn btn-outline">📥 csv</button>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <h2>📋 Tenant Access</h2>
-        <div class="code-block">
-Production:    /dashboard?tenant=Production&key=prod-123<br>
-Demo:          /dashboard?tenant=Demo&key=demo-123<br>
-StressTest:    /dashboard?tenant=StressTest&key=stress-999<br>
-LinuxServers:  /dashboard?tenant=LinuxServers&key=linux-456<br>
-WebServices:   /dashboard?tenant=WebServices&key=web-789
-        </div>
-        <p style="margin-top: 15px; font-size: 13px; color: #fbbf24;">⚠️ Never share API keys publicly. Use IP whitelisting for production.</p>
-    </div>
-
-    <div class="card">
-        <h2>💡 Use Cases</h2>
-        <div class="features-grid">
-            <div class="feature"><h3>🏭 Manufacturing</h3><p>Monitor PLCs, production lines, and factory equipment via Modbus.</p></div>
-            <div class="feature"><h3>☁️ Multi-Cloud</h3><p>Monitor AWS, Azure, GCP, and DigitalOcean from one dashboard.</p></div>
-            <div class="feature"><h3>🖥️ DevOps</h3><p>Container health, CI/CD pipelines, and infrastructure monitoring.</p></div>
-            <div class="feature"><h3>🔐 Security</h3><p>SSL certificate expiry, port scanning, and compliance monitoring.</p></div>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>📞 Contact & Support</h2>
-        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-            <a href="mailto:hello@continuum-monitor.com" class="btn">📧 Email Us</a>
-            <a href="https://github.com/swrz-ai/Continuum-Monitor" class="btn btn-outline" target="_blank">📦 GitHub</a>
-            <a href="https://www.linkedin.com/company/continuum-monitor" class="btn btn-outline" target="_blank">🔗 LinkedIn</a>
+        <div id="logsContainer" style="max-height:150px;overflow-y:auto;">
+            <div class="log-entry"><span class="time">--</span> no_logs_match</div>
         </div>
     </div>
 
     <div class="footer">
-        <p><a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a> | <a href="/refund">Refund Policy</a> | <a href="/health">System Status</a></p>
-        <p>© 2026 Continuum Monitor, Inc. All rights reserved. | v5.0 Go-Powered | Modbus IoT Ready | Crowdsec Protected</p>
-        <p style="margin-top: 10px; font-size: 11px;">🔒 Enterprise Security: TLS 1.3 | Crowdsec IDS | Multi-Tenant | IP Whitelisting | 365-Day Retention</p>
+        <p><a href="/health">system_health</a> | <a href="https://github.com/swrz-ai/Continuum-Monitor">github</a></p>
+        <p class="disclaimer">⚠️ All latency and prediction data are simulated for demonstration purposes.</p>
+        <p>🔒 TLS 1.3 | Crowdsec | MFA | SHA-256 | IP Whitelisting | 365-Day Retention</p>
+        <p>© 2026 Continuum Monitor, Inc. — Go‑Powered | Enterprise‑Grade</p>
     </div>
 </div>
+
+<script>
+    // --------------------------------------------------------------
+    // GLOBALS
+    // --------------------------------------------------------------
+    let responseChart, uptimeChart;
+    const UPDATE_INTERVAL = 3000;
+    const API_BASE = '';
+
+    let responseData = [120, 90, 150, 80, 200, 110, 95, 130, 170, 140, 100];
+    let uptimeData = [99.8, 99.9, 99.7, 99.6, 99.8, 99.9, 99.5, 99.7, 99.8, 99.9, 99.6];
+    const MAX_POINTS = 20;
+    const timeLabels = [];
+
+    // --------------------------------------------------------------
+    // CLOCK
+    // --------------------------------------------------------------
+    function updateClock() {
+        document.getElementById('headerTime').textContent = '🕒 ' + new Date().toLocaleString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // --------------------------------------------------------------
+    // STATS (mock)
+    // --------------------------------------------------------------
+    function updateStats() {
+        const healthy = Math.floor(Math.random() * 3) + 2;
+        const warning = Math.floor(Math.random() * 2);
+        const error = Math.floor(Math.random() * 2);
+        document.getElementById('healthyNodes').textContent = healthy;
+        document.getElementById('warningNodes').textContent = warning;
+        document.getElementById('errorNodes').textContent = error;
+    }
+
+    // --------------------------------------------------------------
+    // NODE STATUS
+    // --------------------------------------------------------------
+    const NODES = ['cloudflare.com', 'github.com', 'google.com', 'aws.amazon.com', 'azure.com'];
+    function renderNodes() {
+        const tbody = document.getElementById('nodeTable');
+        tbody.innerHTML = '';
+        const now = new Date().toLocaleTimeString();
+        NODES.forEach(name => {
+            const r = Math.random();
+            let statusClass, statusText, response;
+            if (r < 0.7) {
+                statusClass = 'status-healthy'; statusText = 'Healthy'; response = (Math.random()*5+1).toFixed(1) + 'ms';
+            } else if (r < 0.9) {
+                statusClass = 'status-warning'; statusText = 'Warning'; response = (Math.random()*50+10).toFixed(1) + 'ms';
+            } else {
+                statusClass = 'status-error'; statusText = 'Error'; response = (Math.random()*3000+500).toFixed(1) + 'ms';
+            }
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${name}</td><td><span class="status-badge ${statusClass}">${statusText}</span></td><td>${response}</td><td>${now}</td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // --------------------------------------------------------------
+    // MODBUS TABLE
+    // --------------------------------------------------------------
+    const MODBUS_DEVICES = [
+        { device: 'PLC_Main', ip: '192.168.1.100:502', register: '40001' },
+        { device: 'Flow_Meter_1', ip: '192.168.1.101:502', register: '30001' },
+        { device: 'Temperature_Sensor', ip: '192.168.1.102:502', register: '30002' },
+        { device: 'Pressure_Sensor', ip: '192.168.1.103:502', register: '30003' },
+        { device: 'Energy_Meter', ip: '192.168.1.104:502', register: '40002' },
+    ];
+    function renderModbus() {
+        const tbody = document.getElementById('modbusTable');
+        tbody.innerHTML = '';
+        const now = new Date().toLocaleTimeString();
+        MODBUS_DEVICES.forEach(d => {
+            const healthy = Math.random() > 0.2;
+            const value = healthy ? (Math.random()*100+20).toFixed(1) : 'N/A';
+            const statusClass = healthy ? 'status-healthy' : 'status-error';
+            const statusText = healthy ? 'Healthy' : 'Error';
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${d.device}</td><td>${d.ip}</td><td>${d.register}</td><td>${value}</td><td><span class="status-badge ${statusClass}">${statusText}</span></td><td>${now}</td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // --------------------------------------------------------------
+    // AI PREDICTIONS
+    // --------------------------------------------------------------
+    async function fetchPredictions() {
+        const sens = document.getElementById('sensitivity').value;
+        try {
+            const resp = await fetch(`/api/ai/predictions?sensitivity=${sens}`);
+            if (!resp.ok) throw new Error('API error');
+            const data = await resp.json();
+            renderPredictions(data.predictions || []);
+        } catch (e) {
+            renderPredictions(generateMockPredictions());
+        }
+    }
+
+    function generateMockPredictions() {
+        const nodes = ['PLC_Main', 'Flow_Meter_1', 'Temperature_Sensor', 'Pressure_Sensor', 'Energy_Meter'];
+        return nodes.map(node => {
+            const prob = 20 + Math.random() * 60;
+            let severity, recommendation;
+            if (prob > 80) {
+                severity = 'critical';
+                recommendation = 'High risk. Schedule maintenance.';
+            } else if (prob > 50) {
+                severity = 'warning';
+                recommendation = 'Slight degradation. Monitor closely.';
+            } else {
+                severity = 'low';
+                recommendation = 'All systems operational.';
+            }
+            return {
+                node: node,
+                probability: prob.toFixed(1),
+                severity: severity,
+                recommendation: recommendation,
+                contributing_factors: {
+                    latency: (100 + Math.random() * 200).toFixed(1),
+                    error_rate: (1 + Math.random() * 5).toFixed(1),
+                    uptime_trend: (98 + Math.random() * 2).toFixed(1)
+                }
+            };
+        });
+    }
+
+    function renderPredictions(predictions) {
+        const grid = document.getElementById('predictionGrid');
+        grid.innerHTML = '';
+        if (!predictions.length) {
+            grid.innerHTML = '<div style="color:#6b8f7a;text-align:center;padding:20px;">No predictions available</div>';
+            return;
+        }
+        predictions.forEach(p => {
+            const prob = parseFloat(p.probability || p.prob || 0);
+            const sev = p.severity || 'low';
+            const color = sev === 'critical' ? '#f87171' : (sev === 'warning' ? '#fbbf24' : '#2ecc71');
+            const card = document.createElement('div');
+            card.className = 'pred-card';
+            card.style.borderLeftColor = color;
+            card.innerHTML = `
+                <div class="node">${p.node || 'Unknown'}</div>
+                <div class="prob" style="color:${color}">${prob.toFixed(1)}%</div>
+                <div class="severity" style="color:${color}">${sev}</div>
+                <div style="font-size:12px;color:#6b8f7a;margin:4px 0;">${p.recommendation || ''}</div>
+                <div class="factors">
+                    <span>🔍 latency: ${p.contributing_factors?.latency || '--'}</span>
+                    <span>| error: ${p.contributing_factors?.error_rate || '--'}</span>
+                    <span>| uptime: ${p.contributing_factors?.uptime_trend || '--'}</span>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        document.getElementById('accuracyTotal').textContent = predictions.length;
+        document.getElementById('accuracyCorrect').textContent = Math.floor(predictions.length * 0.85);
+        document.getElementById('accuracyFalse').textContent = Math.ceil(predictions.length * 0.15);
+        document.getElementById('accuracyPercent').textContent = (85 + Math.random() * 10).toFixed(1) + '%';
+    }
+
+    // --------------------------------------------------------------
+    // CHARTS – Real data fetch with mock fallback
+    // --------------------------------------------------------------
+    async function fetchMetricsData() {
+        try {
+            const resp = await fetch('/api/metrics');
+            if (!resp.ok) throw new Error('Metrics API unavailable');
+            const data = await resp.json();
+            if (data && data.metrics && data.metrics.length > 0) {
+                const val = parseFloat(data.metrics[0].value);
+                if (!isNaN(val)) {
+                    responseData.push(val);
+                    if (responseData.length > MAX_POINTS) responseData.shift();
+                }
+                const uptimeVal = 99.5 + Math.random() * 0.5;
+                uptimeData.push(uptimeVal);
+                if (uptimeData.length > MAX_POINTS) uptimeData.shift();
+                return true;
+            }
+        } catch (e) { /* fallback to mock */ }
+        return false;
+    }
+
+    function updateChartsWithMock() {
+        const respVal = 50 + Math.random() * 200;
+        responseData.push(respVal);
+        if (responseData.length > MAX_POINTS) responseData.shift();
+        const uptimeVal = 99.2 + Math.random() * 0.8;
+        uptimeData.push(uptimeVal);
+        if (uptimeData.length > MAX_POINTS) uptimeData.shift();
+    }
+
+    async function updateCharts() {
+        const success = await fetchMetricsData();
+        if (!success) updateChartsWithMock();
+        responseChart.data.datasets[0].data = responseData;
+        uptimeChart.data.datasets[0].data = uptimeData;
+        responseChart.update('none');
+        uptimeChart.update('none');
+    }
+
+    function initCharts() {
+        const ctx1 = document.getElementById('responseChart').getContext('2d');
+        const ctx2 = document.getElementById('uptimeChart').getContext('2d');
+        for (let i = 0; i < responseData.length; i++) timeLabels.push('');
+        responseChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Response (ms)',
+                    data: responseData,
+                    borderColor: '#2ecc71',
+                    backgroundColor: 'rgba(46,204,113,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                    pointRadius: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        uptimeChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Uptime %',
+                    data: uptimeData,
+                    borderColor: '#60a5fa',
+                    backgroundColor: 'rgba(96,165,250,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                    pointRadius: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { min: 99, max: 100 } } }
+        });
+    }
+
+    // --------------------------------------------------------------
+    // OTHER UI UPDATES
+    // --------------------------------------------------------------
+    function updateIncidentTime() {
+        document.getElementById('incidentTime').textContent = new Date().toLocaleTimeString();
+    }
+
+    function refreshLogs() {
+        const container = document.getElementById('logsContainer');
+        container.innerHTML = '';
+        const logs = [
+            '[INFO] System started',
+            '[WARN] Modbus retry attempt 2',
+            '[ERROR] DB connection lost',
+            '[INFO] Redis reconnected',
+            '[WARN] High latency on google.com'
+        ];
+        logs.forEach(msg => {
+            const div = document.createElement('div');
+            div.className = 'log-entry';
+            div.innerHTML = `<span class="time">${new Date().toLocaleTimeString()}</span> ${msg}`;
+            container.appendChild(div);
+        });
+    }
+
+    function exportPNG() { alert('Export PNG (simulated)'); }
+    function resetZoom() { alert('Reset zoom (simulated)'); }
+    function refreshNodes() { renderNodes(); updateStats(); }
+    function refreshPredictions() { fetchPredictions(); }
+    function refreshAccuracy() { fetchPredictions(); }
+
+    document.getElementById('timeRange').addEventListener('click', function(e) {
+        if (e.target.tagName === 'BUTTON') {
+            document.querySelectorAll('#timeRange button').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    });
+
+    // --------------------------------------------------------------
+    // MAIN REFRESH LOOP
+    // --------------------------------------------------------------
+    function refreshAll() {
+        renderNodes();
+        renderModbus();
+        updateStats();
+        updateIncidentTime();
+        refreshLogs();
+        updateCharts();
+    }
+
+    // --------------------------------------------------------------
+    // INIT
+    // --------------------------------------------------------------
+    initCharts();
+    refreshAll();
+    setInterval(refreshAll, UPDATE_INTERVAL);
+    setInterval(fetchPredictions, UPDATE_INTERVAL * 2);
+    fetchPredictions();
+</script>
 </body>
 </html>
