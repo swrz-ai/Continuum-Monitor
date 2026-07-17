@@ -75,8 +75,7 @@ Your dashboard is live at `http://localhost:18517`.
 
 ## 📊 Dashboard Preview
 
-_(Add a screenshot of your dashboard here)_  
-_(Add a screenshot of AI predictions here)_
+<img width="802" height="1080" alt="Continuum Monitor Dashboard – Overview" src="https://github.com/user-attachments/assets/746a7626-5bc0-4205-b632-79b44e6a4661" />
 
 ---
 
