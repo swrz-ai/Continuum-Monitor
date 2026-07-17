@@ -13,19 +13,18 @@
 
 ## 🧠 Why We Built This
 
-Last year, a manufacturing plant we worked with lost **$2M in one week** because they had no visibility into their industrial control systems.  
-They were using five different dashboards, none of them talking to each other.  
-Alerts were missed. Anomalies were spotted too late.
+We’ve seen too many manufacturing and industrial teams juggling five different dashboards – one for Modbus, one for cloud logs, one for security alerts, and none of them talking to each other.
 
-We built Continuum Monitor to fix that – **one tool that brings together**:
+Alerts are missed. Anomalies go unnoticed until something breaks.
 
+We built **Continuum Monitor** to bring **OT, IT, and security monitoring into a single pane of glass** – without the $50k SCADA license or vendor lock‑in.
+
+It’s open‑source, runs as a single Go binary, and connects to:
 - Modbus TCP/RTU and MQTT telemetry
 - AI anomaly detection
 - SLA tracking & incident grouping
-- Slack/Discord alerts
+- Slack/Discord alerts (webhooks)
 - Role‑based access control
-
-All from a **single Go binary** that runs on any Linux server, or as a **fully‑managed cloud service**.
 
 ---
 
@@ -64,3 +63,50 @@ export RABBITMQ_URL=amqp://guest:guest@localhost  # optional
 
 # Start the server
 ./continuum-go
+```
+
+Your dashboard is live at `http://localhost:18517`.
+
+### Option B: Cloud‑Hosted (Fully Managed)
+
+[👉 **Start your free 7‑day trial**](https://continuum.monitor/signup) – no credit card required, deploy in 60 seconds.
+
+---
+
+## 📊 Dashboard Preview
+
+_(Add a screenshot of your dashboard here)_  
+_(Add a screenshot of AI predictions here)_
+
+---
+
+## 🧪 We Read Every Message
+
+**Stuck? Have an idea?**  
+👉 [**Fill out our 30‑second feedback form**](https://forms.gle/your‑link) – we respond within 24 hours.
+
+---
+
+## ⭐ If This Saves You Time…
+
+- **Star this repo** – it helps others find it.
+- **Share it** with a colleague who’s fighting the same OT/IT battles.
+- **Join our [Slack](https://join.slack.com/t/your‑workspace/shared_invite/...)** – we discuss monitoring, share war stories, and help each other debug.
+
+---
+
+## 🤝 Contributing
+
+We welcome issues, PRs, and ideas.  
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📄 License
+
+MIT – use it freely, just keep the copyright notice.
+
+---
+
+**Made with ❤️ by the Continuum team.**  
+[Website](https://continuum.monitor) · [Docs](https://docs.continuum.monitor) · [Blog](https://blog.continuum.monitor)
